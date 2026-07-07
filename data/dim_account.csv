@@ -1,0 +1,11 @@
+account_id,account_code,account_name,account_type,statement
+1,4000,Product Revenue,Revenue,P&L
+2,4010,Service Revenue,Revenue,P&L
+3,5000,COGS - Materials,COGS,P&L
+4,5010,COGS - Freight,COGS,P&L
+5,6000,Salaries & Wages,OpEx,P&L
+6,6010,Rent & Facilities,OpEx,P&L
+7,6020,Marketing,OpEx,P&L
+8,6030,IT & Software,OpEx,P&L
+9,1000,Accounts Receivable,Asset,Balance Sheet
+10,2000,Accounts Payable,Liability,Balance Sheet

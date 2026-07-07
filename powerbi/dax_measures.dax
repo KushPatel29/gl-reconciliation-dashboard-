@@ -1,0 +1,55 @@
+// =====================================================================
+// DAX measure library — GL / P&L Reconciliation Dashboard
+// =====================================================================
+
+// ---------- Control totals ----------
+
+ERP Total = SUM(gl_control_totals[erp_total])
+
+Subledger Total = SUM(gl_control_totals[subledger_total])
+
+Variance $ = [Subledger Total] - [ERP Total]
+
+Variance % =
+DIVIDE([Variance $], ABS([ERP Total]))
+
+// Flag periods/accounts that breach a materiality threshold — tune this
+// to whatever your reconciliation SLA defines as "needs investigation".
+Is Out of Tolerance =
+VAR Threshold = 0.005  // 0.5% materiality threshold
+RETURN
+    IF(ABS([Variance %]) > Threshold, 1, 0)
+
+Accounts Out of Tolerance =
+CALCULATE(
+    DISTINCTCOUNT(gl_control_totals[account_id]),
+    FILTER(gl_control_totals, ABS(DIVIDE([Variance $], ABS([ERP Total]))) > 0.005)
+)
+
+// ---------- Exceptions ----------
+
+Total Exceptions = COUNTROWS(gl_reconciliation_exceptions)
+
+Exception Dollar Impact =
+SUMX(gl_reconciliation_exceptions,
+    COALESCE(gl_reconciliation_exceptions[variance_amount], gl_reconciliation_exceptions[erp_amount])
+)
+
+Missing Count =
+CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Missing in subledger")
+
+Timing Diff Count =
+CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Timing difference")
+
+Amount Mismatch Count =
+CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Amount mismatch")
+
+Duplicate Count =
+CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Duplicate posting")
+
+// Reconciliation "match rate" — the single number a controller wants on
+// a monthly close scorecard.
+Match Rate =
+VAR TotalErpTxns = COUNTROWS(ALLSELECTED(gl_control_totals))
+RETURN
+    DIVIDE(TotalErpTxns - [Total Exceptions], TotalErpTxns)
