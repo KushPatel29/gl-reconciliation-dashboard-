@@ -1,6 +1,10 @@
 # GL/P&L Reconciliation Dashboard
 
 [![CI](https://github.com/KushPatel29/gl-reconciliation-dashboard-/actions/workflows/ci.yml/badge.svg)](https://github.com/KushPatel29/gl-reconciliation-dashboard-/actions/workflows/ci.yml)
+![SQL](https://img.shields.io/badge/SQL-T--SQL%20%2B%20SQLite-CC2927)
+![Power BI](https://img.shields.io/badge/Power%20BI-Close%20Scorecard-F2C811?logo=powerbi&logoColor=black)
+![Python](https://img.shields.io/badge/Python-pandas-3776AB?logo=python&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 A finance-grade reconciliation pipeline and Power BI scorecard that catches
 the four discrepancy types that break month-end close: timing differences,
