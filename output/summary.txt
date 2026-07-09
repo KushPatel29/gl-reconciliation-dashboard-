@@ -1,0 +1,8 @@
+GL RECONCILIATION SUMMARY
+========================================
+Missing in subledger         68  $     20,753.62
+Amount mismatch              61  $     -1,104.80
+Duplicate posting            55  $    145,765.92
+Timing difference            46  $      2,915.87
+========================================
+Total exceptions            230

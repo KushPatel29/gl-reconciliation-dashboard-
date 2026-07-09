@@ -1,0 +1,231 @@
+transaction_id,account_id,period,exception_type,erp_amount,variance_amount
+ERP-000021,4,2025-01,Missing in subledger,565.81,
+ERP-000035,10,2025-01,Missing in subledger,-1024.9,
+ERP-000054,9,2025-01,Missing in subledger,209.87,
+ERP-000144,2,2025-01,Missing in subledger,-388.83,
+ERP-000176,10,2025-01,Missing in subledger,-6124.69,
+ERP-000455,2,2025-01,Missing in subledger,-668.18,
+ERP-000461,2,2025-01,Missing in subledger,-356.98,
+ERP-000602,3,2025-01,Missing in subledger,2741.03,
+ERP-000633,3,2025-01,Missing in subledger,16215.83,
+ERP-000663,7,2025-01,Missing in subledger,1379.83,
+ERP-000916,4,2025-02,Missing in subledger,3183.07,
+ERP-000978,8,2025-02,Missing in subledger,1324.23,
+ERP-000987,8,2025-02,Missing in subledger,510.43,
+ERP-000989,6,2025-02,Missing in subledger,1043.99,
+ERP-000993,8,2025-02,Missing in subledger,474.88,
+ERP-001068,1,2025-02,Missing in subledger,-1239.73,
+ERP-001122,7,2025-02,Missing in subledger,8066.68,
+ERP-001159,1,2025-02,Missing in subledger,-398.27,
+ERP-001288,8,2025-02,Missing in subledger,1649.8,
+ERP-001420,7,2025-02,Missing in subledger,4403.76,
+ERP-001502,7,2025-02,Missing in subledger,943.52,
+ERP-001529,3,2025-02,Missing in subledger,3942.47,
+ERP-001607,4,2025-02,Missing in subledger,13150.41,
+ERP-001643,9,2025-02,Missing in subledger,1283.0,
+ERP-001660,7,2025-02,Missing in subledger,3059.54,
+ERP-001737,7,2025-02,Missing in subledger,668.84,
+ERP-001810,6,2025-03,Missing in subledger,10615.67,
+ERP-001866,1,2025-03,Missing in subledger,-3713.37,
+ERP-002116,10,2025-03,Missing in subledger,-2738.77,
+ERP-002171,9,2025-03,Missing in subledger,2532.36,
+ERP-002242,8,2025-03,Missing in subledger,5845.92,
+ERP-002248,8,2025-03,Missing in subledger,4259.95,
+ERP-002288,2,2025-03,Missing in subledger,-1726.62,
+ERP-002448,2,2025-03,Missing in subledger,-1179.84,
+ERP-002470,5,2025-03,Missing in subledger,1110.76,
+ERP-002502,10,2025-03,Missing in subledger,-26580.3,
+ERP-002574,1,2025-03,Missing in subledger,-1357.37,
+ERP-002597,7,2025-03,Missing in subledger,673.96,
+ERP-002623,8,2025-03,Missing in subledger,3732.21,
+ERP-002631,5,2025-03,Missing in subledger,2055.61,
+ERP-003001,6,2025-04,Missing in subledger,6082.93,
+ERP-003088,1,2025-04,Missing in subledger,-6285.83,
+ERP-003163,2,2025-04,Missing in subledger,-20984.07,
+ERP-003176,3,2025-04,Missing in subledger,9684.29,
+ERP-003201,1,2025-04,Missing in subledger,-1664.34,
+ERP-003202,9,2025-04,Missing in subledger,1064.85,
+ERP-003314,9,2025-04,Missing in subledger,642.92,
+ERP-003394,3,2025-04,Missing in subledger,1176.94,
+ERP-003396,5,2025-04,Missing in subledger,676.4,
+ERP-003525,3,2025-04,Missing in subledger,1378.47,
+ERP-003537,9,2025-04,Missing in subledger,103.39,
+ERP-003647,5,2025-05,Missing in subledger,426.83,
+ERP-003759,1,2025-05,Missing in subledger,-6817.48,
+ERP-003761,1,2025-05,Missing in subledger,-2878.88,
+ERP-003775,4,2025-05,Missing in subledger,3942.17,
+ERP-003913,6,2025-05,Missing in subledger,3340.99,
+ERP-003990,6,2025-05,Missing in subledger,529.61,
+ERP-004031,9,2025-05,Missing in subledger,1002.15,
+ERP-004065,10,2025-05,Missing in subledger,-2222.15,
+ERP-004149,1,2025-05,Missing in subledger,-11412.36,
+ERP-004381,3,2025-05,Missing in subledger,205.68,
+ERP-004417,7,2025-05,Missing in subledger,1639.02,
+ERP-004419,10,2025-05,Missing in subledger,-627.91,
+ERP-004621,2,2025-06,Missing in subledger,-5189.64,
+ERP-004710,2,2025-06,Missing in subledger,-1155.9,
+ERP-004840,1,2025-06,Missing in subledger,-5135.48,
+ERP-005232,2,2025-06,Missing in subledger,-694.16,
+ERP-005358,4,2025-06,Missing in subledger,5779.6,
+ERP-000021,4,2025-01,Timing difference,565.81,
+ERP-000035,10,2025-01,Timing difference,-1024.9,
+ERP-000054,9,2025-01,Timing difference,209.87,
+ERP-000144,2,2025-01,Timing difference,-388.83,
+ERP-000176,10,2025-01,Timing difference,-6124.69,
+ERP-000602,3,2025-01,Timing difference,2741.03,
+ERP-000633,3,2025-01,Timing difference,16215.83,
+ERP-000663,7,2025-01,Timing difference,1379.83,
+ERP-000978,8,2025-02,Timing difference,1324.23,
+ERP-000987,8,2025-02,Timing difference,510.43,
+ERP-000989,6,2025-02,Timing difference,1043.99,
+ERP-000993,8,2025-02,Timing difference,474.88,
+ERP-001068,1,2025-02,Timing difference,-1239.73,
+ERP-001122,7,2025-02,Timing difference,8066.68,
+ERP-001159,1,2025-02,Timing difference,-398.27,
+ERP-001288,8,2025-02,Timing difference,1649.8,
+ERP-001420,7,2025-02,Timing difference,4403.76,
+ERP-001502,7,2025-02,Timing difference,943.52,
+ERP-001529,3,2025-02,Timing difference,3942.47,
+ERP-001643,9,2025-02,Timing difference,1283.0,
+ERP-001660,7,2025-02,Timing difference,3059.54,
+ERP-001737,7,2025-02,Timing difference,668.84,
+ERP-001810,6,2025-03,Timing difference,10615.67,
+ERP-002116,10,2025-03,Timing difference,-2738.77,
+ERP-002242,8,2025-03,Timing difference,5845.92,
+ERP-002248,8,2025-03,Timing difference,4259.95,
+ERP-002288,2,2025-03,Timing difference,-1726.62,
+ERP-002470,5,2025-03,Timing difference,1110.76,
+ERP-002502,10,2025-03,Timing difference,-26580.3,
+ERP-002597,7,2025-03,Timing difference,673.96,
+ERP-002623,8,2025-03,Timing difference,3732.21,
+ERP-003001,6,2025-04,Timing difference,6082.93,
+ERP-003088,1,2025-04,Timing difference,-6285.83,
+ERP-003163,2,2025-04,Timing difference,-20984.07,
+ERP-003201,1,2025-04,Timing difference,-1664.34,
+ERP-003202,9,2025-04,Timing difference,1064.85,
+ERP-003314,9,2025-04,Timing difference,642.92,
+ERP-003394,3,2025-04,Timing difference,1176.94,
+ERP-003396,5,2025-04,Timing difference,676.4,
+ERP-003759,1,2025-05,Timing difference,-6817.48,
+ERP-003761,1,2025-05,Timing difference,-2878.88,
+ERP-003775,4,2025-05,Timing difference,3942.17,
+ERP-003913,6,2025-05,Timing difference,3340.99,
+ERP-003990,6,2025-05,Timing difference,529.61,
+ERP-004031,9,2025-05,Timing difference,1002.15,
+ERP-004149,1,2025-05,Timing difference,-11412.36,
+ERP-000063,4,2025-01,Amount mismatch,757.44,28.489999999999895
+ERP-000106,6,2025-01,Amount mismatch,1694.04,-80.37999999999988
+ERP-000157,8,2025-01,Amount mismatch,4320.47,-244.67000000000007
+ERP-000206,2,2025-01,Amount mismatch,-1450.22,-99.21000000000004
+ERP-000535,10,2025-01,Amount mismatch,-4372.24,-339.5700000000006
+ERP-000555,9,2025-01,Amount mismatch,93.01,3.8499999999999943
+ERP-000720,3,2025-01,Amount mismatch,1634.9,244.56999999999994
+ERP-000820,7,2025-01,Amount mismatch,232.62,-20.450000000000017
+ERP-000832,2,2025-01,Amount mismatch,-1391.61,192.66999999999985
+ERP-000865,1,2025-01,Amount mismatch,-3566.02,56.059999999999945
+ERP-000985,3,2025-02,Amount mismatch,3219.21,433.78999999999996
+ERP-001104,5,2025-02,Amount mismatch,1536.85,-130.8599999999999
+ERP-001190,9,2025-02,Amount mismatch,20799.2,-937.0300000000025
+ERP-001262,10,2025-02,Amount mismatch,-1181.56,23.329999999999927
+ERP-001303,5,2025-02,Amount mismatch,2631.0,382.7199999999998
+ERP-001315,7,2025-02,Amount mismatch,5344.3,509.9399999999996
+ERP-001498,8,2025-02,Amount mismatch,290.73,-14.28000000000003
+ERP-001571,10,2025-02,Amount mismatch,-2120.24,-230.27000000000044
+ERP-001576,4,2025-02,Amount mismatch,6461.67,464.1800000000003
+ERP-001597,10,2025-02,Amount mismatch,-1143.53,132.89999999999998
+ERP-001767,3,2025-02,Amount mismatch,754.37,38.17999999999995
+ERP-002028,5,2025-03,Amount mismatch,2539.4,-48.86000000000013
+ERP-002152,7,2025-03,Amount mismatch,1558.93,-109.32000000000016
+ERP-002155,9,2025-03,Amount mismatch,1350.74,53.680000000000064
+ERP-002334,9,2025-03,Amount mismatch,927.03,71.77999999999997
+ERP-002388,9,2025-03,Amount mismatch,459.72,-49.110000000000014
+ERP-002413,5,2025-03,Amount mismatch,3614.25,-297.73
+ERP-002505,1,2025-03,Amount mismatch,-787.97,-49.620000000000005
+ERP-002533,9,2025-03,Amount mismatch,9362.56,-548.8500000000004
+ERP-002556,9,2025-03,Amount mismatch,770.09,31.289999999999964
+ERP-002586,7,2025-03,Amount mismatch,1928.67,-220.87000000000012
+ERP-002605,1,2025-03,Amount mismatch,-1380.9,-183.56999999999994
+ERP-002659,10,2025-03,Amount mismatch,-1795.45,195.84000000000015
+ERP-002714,4,2025-04,Amount mismatch,1420.79,-56.569999999999936
+ERP-002798,7,2025-04,Amount mismatch,1026.01,-138.41999999999996
+ERP-002812,1,2025-04,Amount mismatch,-1519.91,-175.80999999999995
+ERP-003015,4,2025-04,Amount mismatch,1071.51,-62.210000000000036
+ERP-003028,3,2025-04,Amount mismatch,189.9,-13.289999999999992
+ERP-003185,8,2025-04,Amount mismatch,10605.39,-222.57999999999993
+ERP-003209,2,2025-04,Amount mismatch,-1553.92,118.95000000000005
+ERP-003269,10,2025-04,Amount mismatch,-3994.91,-511.2300000000005
+ERP-003309,4,2025-04,Amount mismatch,2170.29,-123.42000000000007
+ERP-003747,5,2025-05,Amount mismatch,1084.15,76.3599999999999
+ERP-003865,3,2025-05,Amount mismatch,365.42,29.30000000000001
+ERP-003881,1,2025-05,Amount mismatch,-2846.94,-318.52999999999975
+ERP-003898,6,2025-05,Amount mismatch,385.81,55.25999999999999
+ERP-004001,6,2025-05,Amount mismatch,1889.03,100.32999999999993
+ERP-004064,2,2025-05,Amount mismatch,-1283.32,-33.40000000000009
+ERP-004107,8,2025-05,Amount mismatch,999.08,138.86
+ERP-004282,6,2025-05,Amount mismatch,5698.02,-464.7300000000005
+ERP-004336,2,2025-05,Amount mismatch,-2398.41,299.14999999999964
+ERP-004476,2,2025-05,Amount mismatch,-407.06,-29.410000000000025
+ERP-004517,1,2025-06,Amount mismatch,-3267.02,74.34999999999991
+ERP-004523,10,2025-06,Amount mismatch,-627.55,-25.180000000000064
+ERP-004589,1,2025-06,Amount mismatch,-786.16,-62.34000000000003
+ERP-004817,10,2025-06,Amount mismatch,-372.8,22.420000000000016
+ERP-004904,9,2025-06,Amount mismatch,1142.16,156.12999999999988
+ERP-004989,3,2025-06,Amount mismatch,7679.68,319.3599999999997
+ERP-005037,4,2025-06,Amount mismatch,1588.26,-88.22000000000003
+ERP-005101,2,2025-06,Amount mismatch,-2483.42,108.94000000000005
+ERP-005158,9,2025-06,Amount mismatch,5672.83,462.5100000000002
+ERP-000173,6,2025-01,Duplicate posting,1059.04,
+ERP-000301,3,2025-01,Duplicate posting,25341.98,
+ERP-000378,4,2025-01,Duplicate posting,22889.06,
+ERP-000379,9,2025-01,Duplicate posting,487.28,
+ERP-000618,8,2025-01,Duplicate posting,2945.58,
+ERP-000638,1,2025-01,Duplicate posting,-8346.88,
+ERP-000727,2,2025-01,Duplicate posting,-7638.62,
+ERP-000772,9,2025-01,Duplicate posting,5065.54,
+ERP-000937,9,2025-02,Duplicate posting,4831.0,
+ERP-001022,10,2025-02,Duplicate posting,-2479.66,
+ERP-001115,10,2025-02,Duplicate posting,-1124.48,
+ERP-001125,8,2025-02,Duplicate posting,796.76,
+ERP-001172,3,2025-02,Duplicate posting,4250.18,
+ERP-001359,3,2025-02,Duplicate posting,24348.56,
+ERP-001363,1,2025-02,Duplicate posting,-7499.28,
+ERP-001382,5,2025-02,Duplicate posting,1768.56,
+ERP-001540,8,2025-02,Duplicate posting,2401.7,
+ERP-001608,2,2025-02,Duplicate posting,-1497.22,
+ERP-001613,1,2025-02,Duplicate posting,-290.56,
+ERP-001719,7,2025-02,Duplicate posting,2525.04,
+ERP-001871,10,2025-03,Duplicate posting,-18089.36,
+ERP-001924,3,2025-03,Duplicate posting,1666.82,
+ERP-001939,10,2025-03,Duplicate posting,-7997.86,
+ERP-002005,4,2025-03,Duplicate posting,3509.16,
+ERP-002036,7,2025-03,Duplicate posting,3070.72,
+ERP-002100,2,2025-03,Duplicate posting,-2449.72,
+ERP-002131,10,2025-03,Duplicate posting,-1678.48,
+ERP-002250,9,2025-03,Duplicate posting,3755.3,
+ERP-002365,3,2025-03,Duplicate posting,1217.38,
+ERP-002377,2,2025-03,Duplicate posting,-12723.54,
+ERP-002387,5,2025-03,Duplicate posting,14007.46,
+ERP-002547,9,2025-03,Duplicate posting,11908.18,
+ERP-002723,1,2025-04,Duplicate posting,-6689.82,
+ERP-002735,3,2025-04,Duplicate posting,7185.44,
+ERP-002807,10,2025-04,Duplicate posting,-832.7,
+ERP-002820,3,2025-04,Duplicate posting,19519.28,
+ERP-002892,2,2025-04,Duplicate posting,-2644.68,
+ERP-002898,3,2025-04,Duplicate posting,24087.36,
+ERP-002908,10,2025-04,Duplicate posting,-422.34,
+ERP-003160,2,2025-04,Duplicate posting,-5877.42,
+ERP-003212,5,2025-04,Duplicate posting,887.8,
+ERP-003499,2,2025-04,Duplicate posting,-2999.54,
+ERP-003565,2,2025-04,Duplicate posting,-19302.26,
+ERP-003958,9,2025-05,Duplicate posting,7206.9,
+ERP-003977,3,2025-05,Duplicate posting,1067.8,
+ERP-004226,5,2025-05,Duplicate posting,10604.96,
+ERP-004372,4,2025-05,Duplicate posting,10117.8,
+ERP-004504,7,2025-06,Duplicate posting,6893.2,
+ERP-004594,7,2025-06,Duplicate posting,23834.58,
+ERP-004597,10,2025-06,Duplicate posting,-6458.82,
+ERP-004777,6,2025-06,Duplicate posting,6864.76,
+ERP-004974,6,2025-06,Duplicate posting,3528.2,
+ERP-005209,2,2025-06,Duplicate posting,-1685.52,
+ERP-005339,8,2025-06,Duplicate posting,2894.2,
+ERP-005389,8,2025-06,Duplicate posting,1957.1,
