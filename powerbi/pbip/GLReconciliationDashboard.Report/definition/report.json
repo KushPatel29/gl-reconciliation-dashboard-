@@ -5,6 +5,11 @@
       "name": "CY24SU10",
       "reportVersionAtImport": "5.61",
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "MeridianTheme.json",
+      "reportVersionAtImport": "5.61",
+      "type": "RegisteredResources"
     }
   },
   "layoutOptimization": "None",
@@ -17,6 +22,17 @@
           "name": "CY24SU10",
           "path": "BaseThemes/CY24SU10.json",
           "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "MeridianTheme.json",
+          "path": "MeridianTheme.json",
+          "type": "CustomTheme"
         }
       ]
     }
