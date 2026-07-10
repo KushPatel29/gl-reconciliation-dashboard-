@@ -1,0 +1,37 @@
+table dim_period
+	lineageTag: 054e0a91-f8af-4c92-b1fd-3a56913b2fb2
+
+	column period
+		dataType: string
+		sortByColumn: period_start
+		lineageTag: 4a68481e-7255-4593-837f-1e47a6b7a22b
+		summarizeBy: none
+		sourceColumn: period
+
+	column period_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 1319352a-8333-435f-afa8-9bc2aa108c4e
+		summarizeBy: none
+		sourceColumn: period_start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dim_period = m
+		mode: import
+		source =
+				let
+				    // Periods pulled from both engine outputs, loaded directly (not by
+				    // referencing sibling queries) to stay clear of the privacy firewall.
+				    CtRaw = Csv.Document(File.Contents(DataPath & "\output\gl_control_totals.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    CtPromoted = Table.PromoteHeaders(CtRaw, [PromoteAllScalars = true]),
+				    CtPeriods = Table.SelectColumns(CtPromoted, {"period"}),
+				    ExRaw = Csv.Document(File.Contents(DataPath & "\output\gl_reconciliation_exceptions.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    ExPromoted = Table.PromoteHeaders(ExRaw, [PromoteAllScalars = true]),
+				    ExPeriods = Table.SelectColumns(ExPromoted, {"period"}),
+				    Combined = Table.Distinct(Table.Combine({CtPeriods, ExPeriods})),
+				    Typed = Table.TransformColumnTypes(Combined, {{"period", type text}}),
+				    AddedStart = Table.AddColumn(Typed, "period_start", each Date.FromText([period] & "-01"), type date),
+				    Sorted = Table.Sort(AddedStart, {{"period", Order.Ascending}})
+				in
+				    Sorted

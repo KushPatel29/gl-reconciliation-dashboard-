@@ -1,0 +1,27 @@
+relationship b1000001-0000-4000-8000-000000000001
+	fromColumn: gl_control_totals.account_id
+	toColumn: dim_account.account_id
+
+relationship b1000001-0000-4000-8000-000000000002
+	fromColumn: gl_control_totals.period
+	toColumn: dim_period.period
+
+relationship b1000001-0000-4000-8000-000000000003
+	fromColumn: gl_reconciliation_exceptions.account_id
+	toColumn: dim_account.account_id
+
+relationship b1000001-0000-4000-8000-000000000004
+	fromColumn: gl_reconciliation_exceptions.period
+	toColumn: dim_period.period
+
+relationship b1000001-0000-4000-8000-000000000005
+	fromColumn: fact_erp_gl.account_id
+	toColumn: dim_account.account_id
+
+relationship b1000001-0000-4000-8000-000000000006
+	fromColumn: fact_erp_gl.cost_center_id
+	toColumn: dim_cost_center.cost_center_id
+
+relationship b1000001-0000-4000-8000-000000000007
+	fromColumn: fact_erp_gl.period
+	toColumn: dim_period.period

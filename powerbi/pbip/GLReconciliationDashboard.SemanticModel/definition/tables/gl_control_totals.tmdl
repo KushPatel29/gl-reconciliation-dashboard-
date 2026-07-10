@@ -1,0 +1,49 @@
+table gl_control_totals
+	lineageTag: 69916578-ad75-4c0a-a619-73f117c98a16
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d827cd77-bb57-4db7-9889-a158f14643e1
+		summarizeBy: none
+		sourceColumn: account_id
+
+	column period
+		dataType: string
+		lineageTag: d2938622-58b4-4bc8-83e4-703bc3fb0e1a
+		summarizeBy: none
+		sourceColumn: period
+
+	column erp_total
+		dataType: double
+		lineageTag: 8fc37be0-aa74-429f-99e6-b78f11daeb2e
+		summarizeBy: sum
+		sourceColumn: erp_total
+
+	column subledger_total
+		dataType: double
+		lineageTag: 21baad92-0aaf-43ea-a89c-97de029656c9
+		summarizeBy: sum
+		sourceColumn: subledger_total
+
+	column variance_amount
+		dataType: double
+		lineageTag: 1194bf97-4b8a-4ac0-adc4-41c2225993f2
+		summarizeBy: sum
+		sourceColumn: variance_amount
+
+	column variance_pct
+		dataType: double
+		lineageTag: 71c03aa6-5c87-4d9d-bb3c-92e96bf612b1
+		summarizeBy: none
+		sourceColumn: variance_pct
+
+	partition gl_control_totals = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataPath & "\output\gl_control_totals.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"account_id", Int64.Type}, {"period", type text}, {"erp_total", type number}, {"subledger_total", type number}, {"variance_amount", type number}, {"variance_pct", type number}})
+				in
+				    Typed

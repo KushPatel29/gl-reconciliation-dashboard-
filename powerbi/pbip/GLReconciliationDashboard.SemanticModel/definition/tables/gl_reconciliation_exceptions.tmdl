@@ -1,0 +1,49 @@
+table gl_reconciliation_exceptions
+	lineageTag: c854aae9-9d67-44e8-a0a1-018e2f765626
+
+	column transaction_id
+		dataType: string
+		lineageTag: e5c761db-660e-4343-acf7-24fcd9738165
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: feb156ba-f7b8-421c-9458-8cf5ec361e96
+		summarizeBy: none
+		sourceColumn: account_id
+
+	column period
+		dataType: string
+		lineageTag: f4fbbdec-bbd9-4155-ad8f-f2a1ab22435b
+		summarizeBy: none
+		sourceColumn: period
+
+	column exception_type
+		dataType: string
+		lineageTag: 838313be-be0f-44ef-8ff4-2836121e4e5f
+		summarizeBy: none
+		sourceColumn: exception_type
+
+	column erp_amount
+		dataType: double
+		lineageTag: 18aac80b-d045-47a6-b610-574384ccff43
+		summarizeBy: none
+		sourceColumn: erp_amount
+
+	column variance_amount
+		dataType: double
+		lineageTag: 28264823-8415-443c-9e13-30807c790364
+		summarizeBy: none
+		sourceColumn: variance_amount
+
+	partition gl_reconciliation_exceptions = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataPath & "\output\gl_reconciliation_exceptions.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"transaction_id", type text}, {"account_id", Int64.Type}, {"period", type text}, {"exception_type", type text}, {"erp_amount", type number}, {"variance_amount", type number}})
+				in
+				    Typed

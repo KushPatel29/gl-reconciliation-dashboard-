@@ -1,0 +1,86 @@
+table _Measures
+	lineageTag: 9b97db27-2385-493b-93cf-5c0c255cd862
+
+	measure 'ERP Total' = SUM(gl_control_totals[erp_total])
+		formatString: #,0.00
+		lineageTag: 89e59dbd-1ecd-4be4-9827-d7fba340d812
+
+	measure 'Subledger Total' = SUM(gl_control_totals[subledger_total])
+		formatString: #,0.00
+		lineageTag: 49c59d09-1689-4407-bff9-832b38c072da
+
+	measure 'Variance $' = [Subledger Total] - [ERP Total]
+		formatString: #,0.00
+		lineageTag: 9ade3a5a-9fe1-49d7-b485-00663bbef38b
+
+	measure 'Variance %' = DIVIDE([Variance $], ABS([ERP Total]))
+		formatString: 0.00%
+		lineageTag: ce1f8c06-a985-410b-8ef1-3e5595fec5c1
+
+	measure 'Accounts Out of Tolerance' =
+			VAR Threshold = 0.005  // 0.5% materiality
+			RETURN
+			    CALCULATE(
+			        DISTINCTCOUNT(gl_control_totals[account_id]),
+			        FILTER(
+			            gl_control_totals,
+			            ABS(DIVIDE(gl_control_totals[subledger_total] - gl_control_totals[erp_total], ABS(gl_control_totals[erp_total]))) > Threshold
+			        )
+			    )
+		formatString: #,0
+		lineageTag: 200b2b28-215c-4a1d-aeb2-a90509afd6cb
+
+	measure 'Total Exceptions' = COUNTROWS(gl_reconciliation_exceptions)
+		formatString: #,0
+		lineageTag: d99a21a0-f05c-4d61-b01a-063db6e18fdf
+
+	measure 'Exception Dollar Impact' =
+			SUMX(
+			    gl_reconciliation_exceptions,
+			    ABS(COALESCE(gl_reconciliation_exceptions[variance_amount], gl_reconciliation_exceptions[erp_amount]))
+			)
+		formatString: #,0.00
+		lineageTag: 6d2c88cd-e009-469e-8658-b9abefde9d32
+
+	measure 'Missing Count' = CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Missing in subledger")
+		formatString: #,0
+		lineageTag: 7c416b4b-fb0d-4dbb-9bd5-1e6b1097d7ca
+
+	measure 'Timing Diff Count' = CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Timing difference")
+		formatString: #,0
+		lineageTag: 36d7c3a3-4c38-4cd6-95f1-7f06f051eb67
+
+	measure 'Amount Mismatch Count' = CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Amount mismatch")
+		formatString: #,0
+		lineageTag: 419e5d59-6ba8-49f8-8b47-1c6557676999
+
+	measure 'Duplicate Count' = CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Duplicate posting")
+		formatString: #,0
+		lineageTag: 47c482ee-00ec-4785-b4ae-bee2e495a4e0
+
+	measure 'ERP Txn Count' = COUNTROWS(fact_erp_gl)
+		formatString: #,0
+		lineageTag: 2c692c79-6834-4e26-96fa-6dd9cb834b6a
+
+	measure 'Match Rate' =
+			VAR TotalErpTxns = COUNTROWS(fact_erp_gl)
+			RETURN
+			    DIVIDE(TotalErpTxns - [Total Exceptions], TotalErpTxns)
+		formatString: 0.0%
+		lineageTag: ed7c1a53-ab55-4e1b-aea8-07d65bd3f8f7
+
+	column Value
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6c789bc8-87e2-4056-8772-9930dae564cf
+		summarizeBy: none
+		sourceColumn: Value
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table [Value = Int64.Type], {})
+				in
+				    Source

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "visual021",
+  "position": {
+    "x": 20,
+    "y": 150,
+    "z": 21000,
+    "height": 550,
+    "width": 760,
+    "tabOrder": 21000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gl_reconciliation_exceptions"
+                    }
+                  },
+                  "Property": "transaction_id"
+                }
+              },
+              "queryRef": "gl_reconciliation_exceptions.transaction_id",
+              "nativeQueryRef": "transaction_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_account"
+                    }
+                  },
+                  "Property": "account_name"
+                }
+              },
+              "queryRef": "dim_account.account_name",
+              "nativeQueryRef": "account_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gl_reconciliation_exceptions"
+                    }
+                  },
+                  "Property": "period"
+                }
+              },
+              "queryRef": "gl_reconciliation_exceptions.period",
+              "nativeQueryRef": "period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gl_reconciliation_exceptions"
+                    }
+                  },
+                  "Property": "exception_type"
+                }
+              },
+              "queryRef": "gl_reconciliation_exceptions.exception_type",
+              "nativeQueryRef": "exception_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gl_reconciliation_exceptions"
+                    }
+                  },
+                  "Property": "erp_amount"
+                }
+              },
+              "queryRef": "gl_reconciliation_exceptions.erp_amount",
+              "nativeQueryRef": "erp_amount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gl_reconciliation_exceptions"
+                    }
+                  },
+                  "Property": "variance_amount"
+                }
+              },
+              "queryRef": "gl_reconciliation_exceptions.variance_amount",
+              "nativeQueryRef": "variance_amount"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Exception Log'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

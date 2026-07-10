@@ -1,0 +1,43 @@
+table dim_account
+	lineageTag: d40124ec-e3b4-44fb-819a-617960cf986b
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c932deb-81c0-4568-97ca-a1aadb62c1b0
+		summarizeBy: none
+		sourceColumn: account_id
+
+	column account_code
+		dataType: string
+		lineageTag: 69f124d8-0c97-45fe-850d-c318bce00bb6
+		summarizeBy: none
+		sourceColumn: account_code
+
+	column account_name
+		dataType: string
+		lineageTag: dc341601-04bf-4701-b000-93d2a288b0a1
+		summarizeBy: none
+		sourceColumn: account_name
+
+	column account_type
+		dataType: string
+		lineageTag: 82c52634-b9fd-4765-ae9b-1c5164a7193c
+		summarizeBy: none
+		sourceColumn: account_type
+
+	column statement
+		dataType: string
+		lineageTag: 66dd3e93-0a2a-4f70-a1f7-85a0df526d78
+		summarizeBy: none
+		sourceColumn: statement
+
+	partition dim_account = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataPath & "\data\dim_account.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"account_id", Int64.Type}, {"account_code", type text}, {"account_name", type text}, {"account_type", type text}, {"statement", type text}})
+				in
+				    Typed

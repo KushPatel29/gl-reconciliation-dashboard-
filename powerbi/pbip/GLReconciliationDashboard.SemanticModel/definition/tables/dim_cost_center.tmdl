@@ -1,0 +1,25 @@
+table dim_cost_center
+	lineageTag: 9187a10a-92ab-46bf-b91e-04d317689d81
+
+	column cost_center_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f11d0b3-8c8c-40e8-9d48-7597afcb0699
+		summarizeBy: none
+		sourceColumn: cost_center_id
+
+	column cost_center_name
+		dataType: string
+		lineageTag: 50211099-d3f6-47a9-96fe-186e8c1ae0cd
+		summarizeBy: none
+		sourceColumn: cost_center_name
+
+	partition dim_cost_center = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataPath & "\data\dim_cost_center.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"cost_center_id", Int64.Type}, {"cost_center_name", type text}})
+				in
+				    Typed

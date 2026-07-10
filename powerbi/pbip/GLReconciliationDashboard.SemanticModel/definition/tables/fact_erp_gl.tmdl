@@ -1,0 +1,57 @@
+table fact_erp_gl
+	isHidden
+	lineageTag: 5fdda7b6-fbb2-4073-82c5-22c298bf6e68
+
+	column transaction_id
+		dataType: string
+		lineageTag: 47142ffe-7aa4-4b1f-8903-1e807fb6a812
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+	column period
+		dataType: string
+		lineageTag: 999a6956-ca3b-42df-89c7-a141ec557208
+		summarizeBy: none
+		sourceColumn: period
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ab81ab1-3cfc-4d7f-a7fe-60765beac7e1
+		summarizeBy: none
+		sourceColumn: account_id
+
+	column cost_center_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6aa18ad3-9e56-406f-8902-ca77f7db5f9f
+		summarizeBy: none
+		sourceColumn: cost_center_id
+
+	column amount
+		dataType: double
+		lineageTag: 86250c9b-3241-4fed-8d6a-dc4fbb2be30d
+		summarizeBy: sum
+		sourceColumn: amount
+
+	column posted_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: af88e192-1875-46cc-83ad-e330038582ca
+		summarizeBy: none
+		sourceColumn: posted_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition fact_erp_gl = m
+		mode: import
+		source =
+				let
+				    // ERP transaction grain: the Match Rate denominator. Hidden from the
+				    // field list; only measures read it.
+				    Source = Csv.Document(File.Contents(DataPath & "\data\source_erp_gl.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Selected = Table.SelectColumns(Promoted, {"transaction_id", "period", "account_id", "cost_center_id", "amount", "posted_date"}),
+				    Typed = Table.TransformColumnTypes(Selected, {{"transaction_id", type text}, {"period", type text}, {"account_id", Int64.Type}, {"cost_center_id", Int64.Type}, {"amount", type number}, {"posted_date", type date}})
+				in
+				    Typed

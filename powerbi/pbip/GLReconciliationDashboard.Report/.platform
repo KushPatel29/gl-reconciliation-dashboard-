@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "GLReconciliationDashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9b016113-7401-4603-8bbe-8421b4565c78"
+  }
+}

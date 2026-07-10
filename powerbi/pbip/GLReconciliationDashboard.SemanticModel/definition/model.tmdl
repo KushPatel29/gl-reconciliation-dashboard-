@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["dim_account", "dim_cost_center", "dim_period", "gl_control_totals", "gl_reconciliation_exceptions", "fact_erp_gl", "_Measures", "DataPath"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_account
+ref table dim_cost_center
+ref table dim_period
+ref table gl_control_totals
+ref table gl_reconciliation_exceptions
+ref table fact_erp_gl
+ref table _Measures

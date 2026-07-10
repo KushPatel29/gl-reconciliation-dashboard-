@@ -17,6 +17,26 @@ Synthetic data (no real company financials), but the reconciliation logic and
 dashboard structure mirror the GL/P&L reconciliation work referenced on my
 resume.
 
+## Dashboard
+
+Three-page Power BI close scorecard, hand-authored as a Power BI Project
+(TMDL semantic model + PBIR report definition) in
+[`powerbi/pbip/`](powerbi/pbip/) — open `GLReconciliationDashboard.pbip` in
+Power BI Desktop and hit Refresh.
+
+**Close Scorecard** — the month-end health check: match rate, exception count
+and dollar impact, accounts out of tolerance:
+
+![Close Scorecard](powerbi/screenshots/01-close-scorecard.png)
+
+**Variance by Account** — ERP vs subledger control totals with net variance:
+
+![Variance by Account](powerbi/screenshots/02-variance-by-account.png)
+
+**Exception Detail** — the row-level triage list, split by discrepancy type:
+
+![Exception Detail](powerbi/screenshots/03-exception-detail.png)
+
 ## Why this project
 
 "We reconciled GL to subledger" is a common resume line that's hard to prove
@@ -47,6 +67,8 @@ data_generator/     synthetic ERP + subledger GL generator (Python)
 data/               generated CSVs (dim_account, dim_cost_center, two GL sources)
 sql/                reconciliation_checks.sql — T-SQL reference for SQL Server/Fabric
 engine/             SQLite-backed runner: the same SQL, executable with no DB setup
+powerbi/            DAX measure library, build guide, and the ready-to-open
+                     PBIP project (TMDL model + PBIR report, 3 pages)
 tests/              pytest suite proving each discrepancy class is detected
 output/             engine results — control totals, exception log, summary
 .github/workflows/  CI — regenerates data, runs the engine, runs the tests
@@ -72,9 +94,10 @@ python engine/run_reconciliation.py           # run the reconciliation
 The engine loads the CSVs into an in-memory SQLite database and executes the
 reconciliation in SQL (a direct translation of the T-SQL reference in
 `sql/reconciliation_checks.sql`), writing control totals, the categorized
-exception log, and a summary to `output/`. Point Power BI at those CSVs
-following [`powerbi/BUILD_GUIDE.md`](powerbi/BUILD_GUIDE.md), or run the
-T-SQL version directly against SQL Server / Fabric Warehouse.
+exception log, and a summary to `output/`. Then open the pre-built
+dashboard — [`powerbi/pbip/GLReconciliationDashboard.pbip`](powerbi/pbip/)
+(see [`powerbi/pbip/OPEN_ME_FIRST.md`](powerbi/pbip/OPEN_ME_FIRST.md)) — or
+run the T-SQL version directly against SQL Server / Fabric Warehouse.
 
 Verify the detection logic:
 

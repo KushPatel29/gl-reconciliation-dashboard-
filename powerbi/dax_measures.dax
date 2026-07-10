@@ -30,9 +30,11 @@ CALCULATE(
 
 Total Exceptions = COUNTROWS(gl_reconciliation_exceptions)
 
+// ABS so opposite-sign exceptions don't cancel out — this is a magnitude
+// ("how many dollars are in question"), not a net position.
 Exception Dollar Impact =
 SUMX(gl_reconciliation_exceptions,
-    COALESCE(gl_reconciliation_exceptions[variance_amount], gl_reconciliation_exceptions[erp_amount])
+    ABS(COALESCE(gl_reconciliation_exceptions[variance_amount], gl_reconciliation_exceptions[erp_amount]))
 )
 
 Missing Count =
@@ -47,9 +49,15 @@ CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Am
 Duplicate Count =
 CALCULATE([Total Exceptions], gl_reconciliation_exceptions[exception_type] = "Duplicate posting")
 
+// Denominator for Match Rate: the ERP transaction grain, not the
+// account x period control-total grain (60 control rows vs ~5,400
+// transactions — dividing exceptions by control rows breaks the ratio).
+// fact_erp_gl is loaded hidden in the semantic model for exactly this.
+ERP Txn Count = COUNTROWS(fact_erp_gl)
+
 // Reconciliation "match rate" — the single number a controller wants on
 // a monthly close scorecard.
 Match Rate =
-VAR TotalErpTxns = COUNTROWS(ALLSELECTED(gl_control_totals))
+VAR TotalErpTxns = [ERP Txn Count]
 RETURN
     DIVIDE(TotalErpTxns - [Total Exceptions], TotalErpTxns)
