@@ -131,6 +131,16 @@ pip install pytest
 pytest tests/ -v    # 6 tests — every discrepancy class found, every dollar accounted for
 ```
 
+## Tableau version
+
+The close scorecard is also buildable in Tableau in ~15 minutes:
+[`tableau/prepare_tableau_data.py`](tableau/prepare_tableau_data.py) produces
+flat, analysis-ready extracts (variance with a precomputed materiality flag,
+exceptions with impact amounts) and
+[`tableau/BUILD_TABLEAU.md`](tableau/BUILD_TABLEAU.md) is the click-by-click
+build + Tableau Public publish guide, themed to match the rest of the
+portfolio.
+
 ## Beyond GL: the same pattern for any two-systems-that-must-agree problem
 
 GL-to-subledger is one instance of a universal problem: two systems that

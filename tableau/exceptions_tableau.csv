@@ -1,0 +1,231 @@
+transaction_id,account_code,account_name,account_type,period,exception_type,erp_amount,variance_amount,impact_amount
+ERP-000021,5010,COGS - Freight,COGS,2025-01,Missing in subledger,565.81,,565.81
+ERP-000035,2000,Accounts Payable,Liability,2025-01,Missing in subledger,-1024.9,,1024.9
+ERP-000054,1000,Accounts Receivable,Asset,2025-01,Missing in subledger,209.87,,209.87
+ERP-000144,4010,Service Revenue,Revenue,2025-01,Missing in subledger,-388.83,,388.83
+ERP-000176,2000,Accounts Payable,Liability,2025-01,Missing in subledger,-6124.69,,6124.69
+ERP-000455,4010,Service Revenue,Revenue,2025-01,Missing in subledger,-668.18,,668.18
+ERP-000461,4010,Service Revenue,Revenue,2025-01,Missing in subledger,-356.98,,356.98
+ERP-000602,5000,COGS - Materials,COGS,2025-01,Missing in subledger,2741.03,,2741.03
+ERP-000633,5000,COGS - Materials,COGS,2025-01,Missing in subledger,16215.83,,16215.83
+ERP-000663,6020,Marketing,OpEx,2025-01,Missing in subledger,1379.83,,1379.83
+ERP-000916,5010,COGS - Freight,COGS,2025-02,Missing in subledger,3183.07,,3183.07
+ERP-000978,6030,IT & Software,OpEx,2025-02,Missing in subledger,1324.23,,1324.23
+ERP-000987,6030,IT & Software,OpEx,2025-02,Missing in subledger,510.43,,510.43
+ERP-000989,6010,Rent & Facilities,OpEx,2025-02,Missing in subledger,1043.99,,1043.99
+ERP-000993,6030,IT & Software,OpEx,2025-02,Missing in subledger,474.88,,474.88
+ERP-001068,4000,Product Revenue,Revenue,2025-02,Missing in subledger,-1239.73,,1239.73
+ERP-001122,6020,Marketing,OpEx,2025-02,Missing in subledger,8066.68,,8066.68
+ERP-001159,4000,Product Revenue,Revenue,2025-02,Missing in subledger,-398.27,,398.27
+ERP-001288,6030,IT & Software,OpEx,2025-02,Missing in subledger,1649.8,,1649.8
+ERP-001420,6020,Marketing,OpEx,2025-02,Missing in subledger,4403.76,,4403.76
+ERP-001502,6020,Marketing,OpEx,2025-02,Missing in subledger,943.52,,943.52
+ERP-001529,5000,COGS - Materials,COGS,2025-02,Missing in subledger,3942.47,,3942.47
+ERP-001607,5010,COGS - Freight,COGS,2025-02,Missing in subledger,13150.41,,13150.41
+ERP-001643,1000,Accounts Receivable,Asset,2025-02,Missing in subledger,1283.0,,1283.0
+ERP-001660,6020,Marketing,OpEx,2025-02,Missing in subledger,3059.54,,3059.54
+ERP-001737,6020,Marketing,OpEx,2025-02,Missing in subledger,668.84,,668.84
+ERP-001810,6010,Rent & Facilities,OpEx,2025-03,Missing in subledger,10615.67,,10615.67
+ERP-001866,4000,Product Revenue,Revenue,2025-03,Missing in subledger,-3713.37,,3713.37
+ERP-002116,2000,Accounts Payable,Liability,2025-03,Missing in subledger,-2738.77,,2738.77
+ERP-002171,1000,Accounts Receivable,Asset,2025-03,Missing in subledger,2532.36,,2532.36
+ERP-002242,6030,IT & Software,OpEx,2025-03,Missing in subledger,5845.92,,5845.92
+ERP-002248,6030,IT & Software,OpEx,2025-03,Missing in subledger,4259.95,,4259.95
+ERP-002288,4010,Service Revenue,Revenue,2025-03,Missing in subledger,-1726.62,,1726.62
+ERP-002448,4010,Service Revenue,Revenue,2025-03,Missing in subledger,-1179.84,,1179.84
+ERP-002470,6000,Salaries & Wages,OpEx,2025-03,Missing in subledger,1110.76,,1110.76
+ERP-002502,2000,Accounts Payable,Liability,2025-03,Missing in subledger,-26580.3,,26580.3
+ERP-002574,4000,Product Revenue,Revenue,2025-03,Missing in subledger,-1357.37,,1357.37
+ERP-002597,6020,Marketing,OpEx,2025-03,Missing in subledger,673.96,,673.96
+ERP-002623,6030,IT & Software,OpEx,2025-03,Missing in subledger,3732.21,,3732.21
+ERP-002631,6000,Salaries & Wages,OpEx,2025-03,Missing in subledger,2055.61,,2055.61
+ERP-003001,6010,Rent & Facilities,OpEx,2025-04,Missing in subledger,6082.93,,6082.93
+ERP-003088,4000,Product Revenue,Revenue,2025-04,Missing in subledger,-6285.83,,6285.83
+ERP-003163,4010,Service Revenue,Revenue,2025-04,Missing in subledger,-20984.07,,20984.07
+ERP-003176,5000,COGS - Materials,COGS,2025-04,Missing in subledger,9684.29,,9684.29
+ERP-003201,4000,Product Revenue,Revenue,2025-04,Missing in subledger,-1664.34,,1664.34
+ERP-003202,1000,Accounts Receivable,Asset,2025-04,Missing in subledger,1064.85,,1064.85
+ERP-003314,1000,Accounts Receivable,Asset,2025-04,Missing in subledger,642.92,,642.92
+ERP-003394,5000,COGS - Materials,COGS,2025-04,Missing in subledger,1176.94,,1176.94
+ERP-003396,6000,Salaries & Wages,OpEx,2025-04,Missing in subledger,676.4,,676.4
+ERP-003525,5000,COGS - Materials,COGS,2025-04,Missing in subledger,1378.47,,1378.47
+ERP-003537,1000,Accounts Receivable,Asset,2025-04,Missing in subledger,103.39,,103.39
+ERP-003647,6000,Salaries & Wages,OpEx,2025-05,Missing in subledger,426.83,,426.83
+ERP-003759,4000,Product Revenue,Revenue,2025-05,Missing in subledger,-6817.48,,6817.48
+ERP-003761,4000,Product Revenue,Revenue,2025-05,Missing in subledger,-2878.88,,2878.88
+ERP-003775,5010,COGS - Freight,COGS,2025-05,Missing in subledger,3942.17,,3942.17
+ERP-003913,6010,Rent & Facilities,OpEx,2025-05,Missing in subledger,3340.99,,3340.99
+ERP-003990,6010,Rent & Facilities,OpEx,2025-05,Missing in subledger,529.61,,529.61
+ERP-004031,1000,Accounts Receivable,Asset,2025-05,Missing in subledger,1002.15,,1002.15
+ERP-004065,2000,Accounts Payable,Liability,2025-05,Missing in subledger,-2222.15,,2222.15
+ERP-004149,4000,Product Revenue,Revenue,2025-05,Missing in subledger,-11412.36,,11412.36
+ERP-004381,5000,COGS - Materials,COGS,2025-05,Missing in subledger,205.68,,205.68
+ERP-004417,6020,Marketing,OpEx,2025-05,Missing in subledger,1639.02,,1639.02
+ERP-004419,2000,Accounts Payable,Liability,2025-05,Missing in subledger,-627.91,,627.91
+ERP-004621,4010,Service Revenue,Revenue,2025-06,Missing in subledger,-5189.64,,5189.64
+ERP-004710,4010,Service Revenue,Revenue,2025-06,Missing in subledger,-1155.9,,1155.9
+ERP-004840,4000,Product Revenue,Revenue,2025-06,Missing in subledger,-5135.48,,5135.48
+ERP-005232,4010,Service Revenue,Revenue,2025-06,Missing in subledger,-694.16,,694.16
+ERP-005358,5010,COGS - Freight,COGS,2025-06,Missing in subledger,5779.6,,5779.6
+ERP-000021,5010,COGS - Freight,COGS,2025-01,Timing difference,565.81,,565.81
+ERP-000035,2000,Accounts Payable,Liability,2025-01,Timing difference,-1024.9,,1024.9
+ERP-000054,1000,Accounts Receivable,Asset,2025-01,Timing difference,209.87,,209.87
+ERP-000144,4010,Service Revenue,Revenue,2025-01,Timing difference,-388.83,,388.83
+ERP-000176,2000,Accounts Payable,Liability,2025-01,Timing difference,-6124.69,,6124.69
+ERP-000602,5000,COGS - Materials,COGS,2025-01,Timing difference,2741.03,,2741.03
+ERP-000633,5000,COGS - Materials,COGS,2025-01,Timing difference,16215.83,,16215.83
+ERP-000663,6020,Marketing,OpEx,2025-01,Timing difference,1379.83,,1379.83
+ERP-000978,6030,IT & Software,OpEx,2025-02,Timing difference,1324.23,,1324.23
+ERP-000987,6030,IT & Software,OpEx,2025-02,Timing difference,510.43,,510.43
+ERP-000989,6010,Rent & Facilities,OpEx,2025-02,Timing difference,1043.99,,1043.99
+ERP-000993,6030,IT & Software,OpEx,2025-02,Timing difference,474.88,,474.88
+ERP-001068,4000,Product Revenue,Revenue,2025-02,Timing difference,-1239.73,,1239.73
+ERP-001122,6020,Marketing,OpEx,2025-02,Timing difference,8066.68,,8066.68
+ERP-001159,4000,Product Revenue,Revenue,2025-02,Timing difference,-398.27,,398.27
+ERP-001288,6030,IT & Software,OpEx,2025-02,Timing difference,1649.8,,1649.8
+ERP-001420,6020,Marketing,OpEx,2025-02,Timing difference,4403.76,,4403.76
+ERP-001502,6020,Marketing,OpEx,2025-02,Timing difference,943.52,,943.52
+ERP-001529,5000,COGS - Materials,COGS,2025-02,Timing difference,3942.47,,3942.47
+ERP-001643,1000,Accounts Receivable,Asset,2025-02,Timing difference,1283.0,,1283.0
+ERP-001660,6020,Marketing,OpEx,2025-02,Timing difference,3059.54,,3059.54
+ERP-001737,6020,Marketing,OpEx,2025-02,Timing difference,668.84,,668.84
+ERP-001810,6010,Rent & Facilities,OpEx,2025-03,Timing difference,10615.67,,10615.67
+ERP-002116,2000,Accounts Payable,Liability,2025-03,Timing difference,-2738.77,,2738.77
+ERP-002242,6030,IT & Software,OpEx,2025-03,Timing difference,5845.92,,5845.92
+ERP-002248,6030,IT & Software,OpEx,2025-03,Timing difference,4259.95,,4259.95
+ERP-002288,4010,Service Revenue,Revenue,2025-03,Timing difference,-1726.62,,1726.62
+ERP-002470,6000,Salaries & Wages,OpEx,2025-03,Timing difference,1110.76,,1110.76
+ERP-002502,2000,Accounts Payable,Liability,2025-03,Timing difference,-26580.3,,26580.3
+ERP-002597,6020,Marketing,OpEx,2025-03,Timing difference,673.96,,673.96
+ERP-002623,6030,IT & Software,OpEx,2025-03,Timing difference,3732.21,,3732.21
+ERP-003001,6010,Rent & Facilities,OpEx,2025-04,Timing difference,6082.93,,6082.93
+ERP-003088,4000,Product Revenue,Revenue,2025-04,Timing difference,-6285.83,,6285.83
+ERP-003163,4010,Service Revenue,Revenue,2025-04,Timing difference,-20984.07,,20984.07
+ERP-003201,4000,Product Revenue,Revenue,2025-04,Timing difference,-1664.34,,1664.34
+ERP-003202,1000,Accounts Receivable,Asset,2025-04,Timing difference,1064.85,,1064.85
+ERP-003314,1000,Accounts Receivable,Asset,2025-04,Timing difference,642.92,,642.92
+ERP-003394,5000,COGS - Materials,COGS,2025-04,Timing difference,1176.94,,1176.94
+ERP-003396,6000,Salaries & Wages,OpEx,2025-04,Timing difference,676.4,,676.4
+ERP-003759,4000,Product Revenue,Revenue,2025-05,Timing difference,-6817.48,,6817.48
+ERP-003761,4000,Product Revenue,Revenue,2025-05,Timing difference,-2878.88,,2878.88
+ERP-003775,5010,COGS - Freight,COGS,2025-05,Timing difference,3942.17,,3942.17
+ERP-003913,6010,Rent & Facilities,OpEx,2025-05,Timing difference,3340.99,,3340.99
+ERP-003990,6010,Rent & Facilities,OpEx,2025-05,Timing difference,529.61,,529.61
+ERP-004031,1000,Accounts Receivable,Asset,2025-05,Timing difference,1002.15,,1002.15
+ERP-004149,4000,Product Revenue,Revenue,2025-05,Timing difference,-11412.36,,11412.36
+ERP-000063,5010,COGS - Freight,COGS,2025-01,Amount mismatch,757.44,28.489999999999895,28.489999999999895
+ERP-000106,6010,Rent & Facilities,OpEx,2025-01,Amount mismatch,1694.04,-80.37999999999988,80.37999999999988
+ERP-000157,6030,IT & Software,OpEx,2025-01,Amount mismatch,4320.47,-244.67000000000007,244.67000000000007
+ERP-000206,4010,Service Revenue,Revenue,2025-01,Amount mismatch,-1450.22,-99.21000000000004,99.21000000000004
+ERP-000535,2000,Accounts Payable,Liability,2025-01,Amount mismatch,-4372.24,-339.5700000000006,339.5700000000006
+ERP-000555,1000,Accounts Receivable,Asset,2025-01,Amount mismatch,93.01,3.8499999999999943,3.8499999999999943
+ERP-000720,5000,COGS - Materials,COGS,2025-01,Amount mismatch,1634.9,244.56999999999994,244.56999999999994
+ERP-000820,6020,Marketing,OpEx,2025-01,Amount mismatch,232.62,-20.450000000000017,20.450000000000017
+ERP-000832,4010,Service Revenue,Revenue,2025-01,Amount mismatch,-1391.61,192.66999999999985,192.66999999999985
+ERP-000865,4000,Product Revenue,Revenue,2025-01,Amount mismatch,-3566.02,56.059999999999945,56.059999999999945
+ERP-000985,5000,COGS - Materials,COGS,2025-02,Amount mismatch,3219.21,433.78999999999996,433.78999999999996
+ERP-001104,6000,Salaries & Wages,OpEx,2025-02,Amount mismatch,1536.85,-130.8599999999999,130.8599999999999
+ERP-001190,1000,Accounts Receivable,Asset,2025-02,Amount mismatch,20799.2,-937.0300000000025,937.0300000000025
+ERP-001262,2000,Accounts Payable,Liability,2025-02,Amount mismatch,-1181.56,23.329999999999927,23.329999999999927
+ERP-001303,6000,Salaries & Wages,OpEx,2025-02,Amount mismatch,2631.0,382.7199999999998,382.7199999999998
+ERP-001315,6020,Marketing,OpEx,2025-02,Amount mismatch,5344.3,509.9399999999996,509.9399999999996
+ERP-001498,6030,IT & Software,OpEx,2025-02,Amount mismatch,290.73,-14.28000000000003,14.28000000000003
+ERP-001571,2000,Accounts Payable,Liability,2025-02,Amount mismatch,-2120.24,-230.27000000000044,230.27000000000044
+ERP-001576,5010,COGS - Freight,COGS,2025-02,Amount mismatch,6461.67,464.1800000000003,464.1800000000003
+ERP-001597,2000,Accounts Payable,Liability,2025-02,Amount mismatch,-1143.53,132.89999999999998,132.89999999999998
+ERP-001767,5000,COGS - Materials,COGS,2025-02,Amount mismatch,754.37,38.17999999999995,38.17999999999995
+ERP-002028,6000,Salaries & Wages,OpEx,2025-03,Amount mismatch,2539.4,-48.86000000000013,48.86000000000013
+ERP-002152,6020,Marketing,OpEx,2025-03,Amount mismatch,1558.93,-109.32000000000016,109.32000000000016
+ERP-002155,1000,Accounts Receivable,Asset,2025-03,Amount mismatch,1350.74,53.680000000000064,53.680000000000064
+ERP-002334,1000,Accounts Receivable,Asset,2025-03,Amount mismatch,927.03,71.77999999999997,71.77999999999997
+ERP-002388,1000,Accounts Receivable,Asset,2025-03,Amount mismatch,459.72,-49.110000000000014,49.110000000000014
+ERP-002413,6000,Salaries & Wages,OpEx,2025-03,Amount mismatch,3614.25,-297.73,297.73
+ERP-002505,4000,Product Revenue,Revenue,2025-03,Amount mismatch,-787.97,-49.620000000000005,49.620000000000005
+ERP-002533,1000,Accounts Receivable,Asset,2025-03,Amount mismatch,9362.56,-548.8500000000004,548.8500000000004
+ERP-002556,1000,Accounts Receivable,Asset,2025-03,Amount mismatch,770.09,31.289999999999964,31.289999999999964
+ERP-002586,6020,Marketing,OpEx,2025-03,Amount mismatch,1928.67,-220.87000000000012,220.87000000000012
+ERP-002605,4000,Product Revenue,Revenue,2025-03,Amount mismatch,-1380.9,-183.56999999999994,183.56999999999994
+ERP-002659,2000,Accounts Payable,Liability,2025-03,Amount mismatch,-1795.45,195.84000000000015,195.84000000000015
+ERP-002714,5010,COGS - Freight,COGS,2025-04,Amount mismatch,1420.79,-56.569999999999936,56.569999999999936
+ERP-002798,6020,Marketing,OpEx,2025-04,Amount mismatch,1026.01,-138.41999999999996,138.41999999999996
+ERP-002812,4000,Product Revenue,Revenue,2025-04,Amount mismatch,-1519.91,-175.80999999999995,175.80999999999995
+ERP-003015,5010,COGS - Freight,COGS,2025-04,Amount mismatch,1071.51,-62.210000000000036,62.210000000000036
+ERP-003028,5000,COGS - Materials,COGS,2025-04,Amount mismatch,189.9,-13.289999999999992,13.289999999999992
+ERP-003185,6030,IT & Software,OpEx,2025-04,Amount mismatch,10605.39,-222.57999999999993,222.57999999999993
+ERP-003209,4010,Service Revenue,Revenue,2025-04,Amount mismatch,-1553.92,118.95000000000005,118.95000000000005
+ERP-003269,2000,Accounts Payable,Liability,2025-04,Amount mismatch,-3994.91,-511.2300000000005,511.2300000000005
+ERP-003309,5010,COGS - Freight,COGS,2025-04,Amount mismatch,2170.29,-123.42000000000007,123.42000000000007
+ERP-003747,6000,Salaries & Wages,OpEx,2025-05,Amount mismatch,1084.15,76.3599999999999,76.3599999999999
+ERP-003865,5000,COGS - Materials,COGS,2025-05,Amount mismatch,365.42,29.30000000000001,29.30000000000001
+ERP-003881,4000,Product Revenue,Revenue,2025-05,Amount mismatch,-2846.94,-318.52999999999975,318.52999999999975
+ERP-003898,6010,Rent & Facilities,OpEx,2025-05,Amount mismatch,385.81,55.25999999999999,55.25999999999999
+ERP-004001,6010,Rent & Facilities,OpEx,2025-05,Amount mismatch,1889.03,100.32999999999993,100.32999999999993
+ERP-004064,4010,Service Revenue,Revenue,2025-05,Amount mismatch,-1283.32,-33.40000000000009,33.40000000000009
+ERP-004107,6030,IT & Software,OpEx,2025-05,Amount mismatch,999.08,138.86,138.86
+ERP-004282,6010,Rent & Facilities,OpEx,2025-05,Amount mismatch,5698.02,-464.7300000000005,464.7300000000005
+ERP-004336,4010,Service Revenue,Revenue,2025-05,Amount mismatch,-2398.41,299.14999999999964,299.14999999999964
+ERP-004476,4010,Service Revenue,Revenue,2025-05,Amount mismatch,-407.06,-29.410000000000025,29.410000000000025
+ERP-004517,4000,Product Revenue,Revenue,2025-06,Amount mismatch,-3267.02,74.34999999999991,74.34999999999991
+ERP-004523,2000,Accounts Payable,Liability,2025-06,Amount mismatch,-627.55,-25.180000000000064,25.180000000000064
+ERP-004589,4000,Product Revenue,Revenue,2025-06,Amount mismatch,-786.16,-62.34000000000003,62.34000000000003
+ERP-004817,2000,Accounts Payable,Liability,2025-06,Amount mismatch,-372.8,22.420000000000016,22.420000000000016
+ERP-004904,1000,Accounts Receivable,Asset,2025-06,Amount mismatch,1142.16,156.12999999999988,156.12999999999988
+ERP-004989,5000,COGS - Materials,COGS,2025-06,Amount mismatch,7679.68,319.3599999999997,319.3599999999997
+ERP-005037,5010,COGS - Freight,COGS,2025-06,Amount mismatch,1588.26,-88.22000000000003,88.22000000000003
+ERP-005101,4010,Service Revenue,Revenue,2025-06,Amount mismatch,-2483.42,108.94000000000005,108.94000000000005
+ERP-005158,1000,Accounts Receivable,Asset,2025-06,Amount mismatch,5672.83,462.5100000000002,462.5100000000002
+ERP-000173,6010,Rent & Facilities,OpEx,2025-01,Duplicate posting,1059.04,,1059.04
+ERP-000301,5000,COGS - Materials,COGS,2025-01,Duplicate posting,25341.98,,25341.98
+ERP-000378,5010,COGS - Freight,COGS,2025-01,Duplicate posting,22889.06,,22889.06
+ERP-000379,1000,Accounts Receivable,Asset,2025-01,Duplicate posting,487.28,,487.28
+ERP-000618,6030,IT & Software,OpEx,2025-01,Duplicate posting,2945.58,,2945.58
+ERP-000638,4000,Product Revenue,Revenue,2025-01,Duplicate posting,-8346.88,,8346.88
+ERP-000727,4010,Service Revenue,Revenue,2025-01,Duplicate posting,-7638.62,,7638.62
+ERP-000772,1000,Accounts Receivable,Asset,2025-01,Duplicate posting,5065.54,,5065.54
+ERP-000937,1000,Accounts Receivable,Asset,2025-02,Duplicate posting,4831.0,,4831.0
+ERP-001022,2000,Accounts Payable,Liability,2025-02,Duplicate posting,-2479.66,,2479.66
+ERP-001115,2000,Accounts Payable,Liability,2025-02,Duplicate posting,-1124.48,,1124.48
+ERP-001125,6030,IT & Software,OpEx,2025-02,Duplicate posting,796.76,,796.76
+ERP-001172,5000,COGS - Materials,COGS,2025-02,Duplicate posting,4250.18,,4250.18
+ERP-001359,5000,COGS - Materials,COGS,2025-02,Duplicate posting,24348.56,,24348.56
+ERP-001363,4000,Product Revenue,Revenue,2025-02,Duplicate posting,-7499.28,,7499.28
+ERP-001382,6000,Salaries & Wages,OpEx,2025-02,Duplicate posting,1768.56,,1768.56
+ERP-001540,6030,IT & Software,OpEx,2025-02,Duplicate posting,2401.7,,2401.7
+ERP-001608,4010,Service Revenue,Revenue,2025-02,Duplicate posting,-1497.22,,1497.22
+ERP-001613,4000,Product Revenue,Revenue,2025-02,Duplicate posting,-290.56,,290.56
+ERP-001719,6020,Marketing,OpEx,2025-02,Duplicate posting,2525.04,,2525.04
+ERP-001871,2000,Accounts Payable,Liability,2025-03,Duplicate posting,-18089.36,,18089.36
+ERP-001924,5000,COGS - Materials,COGS,2025-03,Duplicate posting,1666.82,,1666.82
+ERP-001939,2000,Accounts Payable,Liability,2025-03,Duplicate posting,-7997.86,,7997.86
+ERP-002005,5010,COGS - Freight,COGS,2025-03,Duplicate posting,3509.16,,3509.16
+ERP-002036,6020,Marketing,OpEx,2025-03,Duplicate posting,3070.72,,3070.72
+ERP-002100,4010,Service Revenue,Revenue,2025-03,Duplicate posting,-2449.72,,2449.72
+ERP-002131,2000,Accounts Payable,Liability,2025-03,Duplicate posting,-1678.48,,1678.48
+ERP-002250,1000,Accounts Receivable,Asset,2025-03,Duplicate posting,3755.3,,3755.3
+ERP-002365,5000,COGS - Materials,COGS,2025-03,Duplicate posting,1217.38,,1217.38
+ERP-002377,4010,Service Revenue,Revenue,2025-03,Duplicate posting,-12723.54,,12723.54
+ERP-002387,6000,Salaries & Wages,OpEx,2025-03,Duplicate posting,14007.46,,14007.46
+ERP-002547,1000,Accounts Receivable,Asset,2025-03,Duplicate posting,11908.18,,11908.18
+ERP-002723,4000,Product Revenue,Revenue,2025-04,Duplicate posting,-6689.82,,6689.82
+ERP-002735,5000,COGS - Materials,COGS,2025-04,Duplicate posting,7185.44,,7185.44
+ERP-002807,2000,Accounts Payable,Liability,2025-04,Duplicate posting,-832.7,,832.7
+ERP-002820,5000,COGS - Materials,COGS,2025-04,Duplicate posting,19519.28,,19519.28
+ERP-002892,4010,Service Revenue,Revenue,2025-04,Duplicate posting,-2644.68,,2644.68
+ERP-002898,5000,COGS - Materials,COGS,2025-04,Duplicate posting,24087.36,,24087.36
+ERP-002908,2000,Accounts Payable,Liability,2025-04,Duplicate posting,-422.34,,422.34
+ERP-003160,4010,Service Revenue,Revenue,2025-04,Duplicate posting,-5877.42,,5877.42
+ERP-003212,6000,Salaries & Wages,OpEx,2025-04,Duplicate posting,887.8,,887.8
+ERP-003499,4010,Service Revenue,Revenue,2025-04,Duplicate posting,-2999.54,,2999.54
+ERP-003565,4010,Service Revenue,Revenue,2025-04,Duplicate posting,-19302.26,,19302.26
+ERP-003958,1000,Accounts Receivable,Asset,2025-05,Duplicate posting,7206.9,,7206.9
+ERP-003977,5000,COGS - Materials,COGS,2025-05,Duplicate posting,1067.8,,1067.8
+ERP-004226,6000,Salaries & Wages,OpEx,2025-05,Duplicate posting,10604.96,,10604.96
+ERP-004372,5010,COGS - Freight,COGS,2025-05,Duplicate posting,10117.8,,10117.8
+ERP-004504,6020,Marketing,OpEx,2025-06,Duplicate posting,6893.2,,6893.2
+ERP-004594,6020,Marketing,OpEx,2025-06,Duplicate posting,23834.58,,23834.58
+ERP-004597,2000,Accounts Payable,Liability,2025-06,Duplicate posting,-6458.82,,6458.82
+ERP-004777,6010,Rent & Facilities,OpEx,2025-06,Duplicate posting,6864.76,,6864.76
+ERP-004974,6010,Rent & Facilities,OpEx,2025-06,Duplicate posting,3528.2,,3528.2
+ERP-005209,4010,Service Revenue,Revenue,2025-06,Duplicate posting,-1685.52,,1685.52
+ERP-005339,6030,IT & Software,OpEx,2025-06,Duplicate posting,2894.2,,2894.2
+ERP-005389,6030,IT & Software,OpEx,2025-06,Duplicate posting,1957.1,,1957.1
