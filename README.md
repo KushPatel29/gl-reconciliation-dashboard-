@@ -37,6 +37,11 @@ and dollar impact, accounts out of tolerance:
 
 ![Exception Detail](powerbi/screenshots/03-exception-detail.png)
 
+**Close Insights** — advanced analytics: match-rate gauge vs the 98% SLA,
+variance waterfall by account, exception mix and impact trend:
+
+![Close Insights](powerbi/screenshots/04-close-insights.png)
+
 ## Why this project
 
 "We reconciled GL to subledger" is a common resume line that's hard to prove
@@ -82,6 +87,26 @@ output/             engine results — control totals, exception log, summary
 | Timing difference | ~1% posted in the following period | Same transaction id, different period |
 | Amount mismatch | ~1% data-entry/rounding error | Same transaction id + period, amount differs > $0.01 |
 | Duplicate posting | ~1% posted twice in the subledger | GROUP BY transaction id + period, count > 1 |
+
+## Framed as an internal control (SOX-style)
+
+Reconciliation isn't just analytics — in a public company it's a key
+control. Here's this project expressed the way an internal-audit PBC list
+would describe it:
+
+| | |
+|---|---|
+| **Control ID** | GL-REC-01 — GL-to-subledger reconciliation |
+| **Objective** | Completeness & accuracy of the GL: every subledger dollar ties to the GL within materiality |
+| **Frequency** | Monthly, at close (CI re-executes it on every code change) |
+| **Owner** | Assistant Controller (simulated) |
+| **Threshold** | 0.5% of account balance (`Is Out of Tolerance` measure) |
+| **Evidence** | `output/gl_control_totals.csv`, categorized exception log, close-scorecard snapshot |
+| **Escalation** | Exceptions grouped by root cause and routed by type — duplicates to AP, timing to accruals review |
+
+The pytest suite doubles as control testing: it proves the reconciliation
+detects each discrepancy class it claims to detect — which is exactly what
+an auditor's re-performance test does.
 
 ## How to reproduce (60 seconds, no database needed)
 

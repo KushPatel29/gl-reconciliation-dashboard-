@@ -55,3 +55,4 @@ table fact_erp_gl
 				    Typed = Table.TransformColumnTypes(Selected, {{"transaction_id", type text}, {"period", type text}, {"account_id", Int64.Type}, {"cost_center_id", Int64.Type}, {"amount", type number}, {"posted_date", type date}})
 				in
 				    Typed
+

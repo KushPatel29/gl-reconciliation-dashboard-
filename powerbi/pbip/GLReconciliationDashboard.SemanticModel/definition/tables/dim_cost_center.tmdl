@@ -23,3 +23,4 @@ table dim_cost_center
 				    Typed = Table.TransformColumnTypes(Promoted, {{"cost_center_id", Int64.Type}, {"cost_center_name", type text}})
 				in
 				    Typed
+

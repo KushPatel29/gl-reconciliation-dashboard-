@@ -3,10 +3,10 @@ table dim_period
 
 	column period
 		dataType: string
-		sortByColumn: period_start
 		lineageTag: 4a68481e-7255-4593-837f-1e47a6b7a22b
 		summarizeBy: none
 		sourceColumn: period
+		sortByColumn: period_start
 
 	column period_start
 		dataType: dateTime
@@ -35,3 +35,4 @@ table dim_period
 				    Sorted = Table.Sort(AddedStart, {{"period", Order.Ascending}})
 				in
 				    Sorted
+

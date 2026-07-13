@@ -41,3 +41,4 @@ table dim_account
 				    Typed = Table.TransformColumnTypes(Promoted, {{"account_id", Int64.Type}, {"account_code", type text}, {"account_name", type text}, {"account_type", type text}, {"statement", type text}})
 				in
 				    Typed
+

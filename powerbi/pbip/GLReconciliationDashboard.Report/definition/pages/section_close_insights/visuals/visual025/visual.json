@@ -1,37 +1,18 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "visual006",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "visual025",
   "position": {
-    "x": 660,
-    "y": 150,
-    "z": 6000,
-    "height": 270,
-    "width": 600,
-    "tabOrder": 6000
+    "x": 20,
+    "y": 20,
+    "z": 25000,
+    "height": 240,
+    "width": 400,
+    "tabOrder": 25000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "gauge",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_period"
-                    }
-                  },
-                  "Property": "period"
-                }
-              },
-              "queryRef": "dim_period.period",
-              "nativeQueryRef": "period",
-              "active": true
-            }
-          ]
-        },
         "Y": {
           "projections": [
             {
@@ -42,16 +23,35 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Variance $"
+                  "Property": "Match Rate"
                 }
               },
-              "queryRef": "_Measures.Variance $",
-              "nativeQueryRef": "Variance $"
+              "queryRef": "_Measures.Match Rate",
+              "nativeQueryRef": "Match Rate"
+            }
+          ]
+        },
+        "TargetValue": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Match Rate Target"
+                }
+              },
+              "queryRef": "_Measures.Match Rate Target",
+              "nativeQueryRef": "Match Rate Target"
             }
           ]
         }
       }
     },
+    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -59,7 +59,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Net Variance $ by Period'"
+                  "Value": "'Match Rate vs 98% Target'"
                 }
               }
             },
@@ -73,7 +73,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

@@ -1,9 +1,10 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
   "pageOrder": [
     "section_close_scorecard",
     "section_variance_account",
-    "section_exception_detail"
+    "section_exception_detail",
+    "section_close_insights"
   ],
-  "activePageName": "section_close_scorecard"
+  "activePageName": "section_exception_detail"
 }

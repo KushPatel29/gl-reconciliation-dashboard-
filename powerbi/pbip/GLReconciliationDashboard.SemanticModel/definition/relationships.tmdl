@@ -25,3 +25,4 @@ relationship b1000001-0000-4000-8000-000000000006
 relationship b1000001-0000-4000-8000-000000000007
 	fromColumn: fact_erp_gl.period
 	toColumn: dim_period.period
+

@@ -69,6 +69,10 @@ table _Measures
 		formatString: 0.0%
 		lineageTag: ed7c1a53-ab55-4e1b-aea8-07d65bd3f8f7
 
+	measure 'Match Rate Target' = 0.98
+		formatString: 0.0%
+		lineageTag: 6dbe3b3e-8b80-49bb-93eb-ad3e5cea3811
+
 	column Value
 		dataType: int64
 		isHidden
@@ -84,3 +88,4 @@ table _Measures
 				    Source = #table(type table [Value = Int64.Type], {})
 				in
 				    Source
+
