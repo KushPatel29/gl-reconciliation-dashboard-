@@ -19,7 +19,7 @@ resume.
 
 ## Dashboard
 
-Three-page Power BI close scorecard, hand-authored as a Power BI Project
+Five-page Power BI report (the month-end close scorecard plus the FinOps chargeback view), hand-authored as a Power BI Project
 (TMDL semantic model + PBIR report definition) in
 [`powerbi/pbip/`](powerbi/pbip/) — open `GLReconciliationDashboard.pbip` in
 Power BI Desktop and hit Refresh.
