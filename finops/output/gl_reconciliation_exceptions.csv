@@ -1,0 +1,6 @@
+transaction_id,account_id,period,exception_type,erp_amount,variance_amount
+focus-2026-06-untagged-ec2,61,2026-06,Missing in subledger,2340.0,
+focus-2026-05-sp-upfront,66,2026-05,Missing in subledger,18000.0,
+focus-2026-05-sp-upfront,66,2026-05,Timing difference,18000.0,
+focus-2026-06-rds-listprice,63,2026-06,Amount mismatch,4100.0,-615.0
+focus-2026-06-datadog,65,2026-06,Duplicate posting,3700.0,

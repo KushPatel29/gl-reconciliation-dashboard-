@@ -108,6 +108,33 @@ The pytest suite doubles as control testing: it proves the reconciliation
 detects each discrepancy class it claims to detect — which is exactly what
 an auditor's re-performance test does.
 
+## The same engine, pointed at a cloud bill (FinOps)
+
+Reconciliation engines shouldn't care what the two systems are. To prove
+this one is a platform rather than a single-purpose script, [`finops/`](finops/)
+maps a **FOCUS-shaped cloud billing export** (the FinOps Foundation's open
+billing spec) and its internal chargeback ledger onto the same two staging
+schemas, plants one of each cloud anomaly, and runs the engine **unmodified**
+— a test asserts the engine source contains no cloud-specific branches:
+
+| Engine classification | Cloud billing cause |
+|---|---|
+| Missing in subledger | **Untagged spend** — no department tag, so the charge never reaches chargeback |
+| Timing difference | **Upfront Savings Plan** — billed as a May cash spike, accrued by finance in June |
+| Amount mismatch | **Unapplied EDP discount** — billed at list price, allocated at the contracted rate |
+| Duplicate posting | **Marketplace double-billing** — SaaS charged via marketplace *and* a direct invoice |
+
+All four are recovered with zero false positives on the clean charges
+(`python finops/focus_demo.py`; column-by-column mapping guide in
+[`finops/README.md`](finops/README.md)). As a control, the cloud variant is:
+
+| | |
+|---|---|
+| **Control ID** | FINOPS-REC-01 — cloud invoice to cost-center ledger reconciliation |
+| **Objective** | Completeness & accuracy of chargebacks: every billed dollar is allocated to an owner |
+| **Threshold** | 0.5% of monthly cloud spend for variance investigation |
+| **Escalation** | Untagged spend → platform engineering (fix the tags); rate mismatches → vendor management; duplicates → AP |
+
 ## How to reproduce (60 seconds, no database needed)
 
 ```bash
@@ -128,7 +155,8 @@ Verify the detection logic:
 
 ```bash
 pip install pytest
-pytest tests/ -v    # 6 tests — every discrepancy class found, every dollar accounted for
+pytest tests/ -v    # 12 tests — every discrepancy class found, every dollar accounted for,
+                    # in both GL and FinOps mode
 ```
 
 ## Tableau version

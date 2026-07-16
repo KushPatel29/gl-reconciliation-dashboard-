@@ -26,5 +26,8 @@ jobs:
       - name: Run reconciliation engine end-to-end
         run: python engine/run_reconciliation.py
 
+      - name: FinOps mode — FOCUS billing demo through the unmodified engine
+        run: python finops/focus_demo.py
+
       - name: Run reconciliation tests
         run: pytest tests/ -v
