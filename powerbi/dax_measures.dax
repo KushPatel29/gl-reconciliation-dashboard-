@@ -61,3 +61,21 @@ Match Rate =
 VAR TotalErpTxns = [ERP Txn Count]
 RETURN
     DIVIDE(TotalErpTxns - [Total Exceptions], TotalErpTxns)
+
+
+// ---------- FinOps mode (Cloud Chargeback page) ----------
+
+Cloud Billed $ = SUM(focus_coverage[billed_total])
+
+Allocation Coverage % =
+DIVIDE(SUM(focus_coverage[allocated_total]), SUM(focus_coverage[billed_total]))
+
+Untagged Spend $ = SUM(focus_coverage[untagged_total])
+
+Cloud Exceptions = COUNTROWS(focus_exceptions)
+
+Cloud Exception $ =
+SUMX(
+    focus_exceptions,
+    ABS(COALESCE(focus_exceptions[variance_amount], focus_exceptions[erp_amount]))
+)

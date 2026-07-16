@@ -34,8 +34,12 @@ slicing — flat text-based period sorting looks wrong in a chart otherwise.
 3. **Exception Detail** — table of `gl_reconciliation_exceptions` grouped by
    `exception_type`, with a slicer for period/account. This is where the
    analyst does root-cause triage.
-4. **Trend** — Variance $ and Match Rate by month, to show whether
-   reconciliation health is improving or degrading over time.
+4. **Close Insights** — match-rate gauge vs the 98% SLA, variance waterfall
+   by account, exception mix and impact trend — whether reconciliation
+   health is improving or degrading over time.
+5. **Cloud Chargeback (FinOps)** — the same engine run on a FOCUS-shaped
+   cloud bill: billed spend, allocation coverage %, untagged dollars,
+   exception mix, and the FINOPS-REC-01 evidence list (see `finops/`).
 
 ## 4. Why this matters for the interview story
 

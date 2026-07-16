@@ -1,8 +1,10 @@
 # How to open this Power BI Project
 
 Everything is pre-built in code — no clicking required. The semantic model
-(TMDL) has 7 tables, 7 relationships, and 13 DAX measures; the report (PBIR)
-has 3 finished pages with 24 visuals.
+(TMDL) has 11 tables, 9 relationships, and 19 DAX measures; the report (PBIR)
+has 5 finished pages with 42 visuals (run `python finops/generate_focus_data.py`
+and `python finops/run_finops_recon.py` too, so the Cloud Chargeback page has
+data to load).
 
 ## Steps
 
