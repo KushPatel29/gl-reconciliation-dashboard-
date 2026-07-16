@@ -81,6 +81,26 @@ table _Measures
 		summarizeBy: none
 		sourceColumn: Value
 
+	measure 'Cloud Billed $' = SUM(focus_coverage[billed_total])
+		formatString: #,0
+		lineageTag: 3d8446c4-daa0-4c4d-982f-67f6b966d8e9
+
+	measure 'Allocation Coverage %' = DIVIDE(SUM(focus_coverage[allocated_total]), SUM(focus_coverage[billed_total]))
+		formatString: 0.0%
+		lineageTag: 0e923f17-0663-41b1-a27c-0ca282265d30
+
+	measure 'Untagged Spend $' = SUM(focus_coverage[untagged_total])
+		formatString: #,0
+		lineageTag: 0c0aacf6-7103-4d42-85ef-22439b656d7d
+
+	measure 'Cloud Exceptions' = COUNTROWS(focus_exceptions)
+		formatString: #,0
+		lineageTag: b0fe40c4-bc32-4d25-897f-5fec3bc98df1
+
+	measure 'Cloud Exception $' = SUMX(focus_exceptions, ABS(COALESCE(focus_exceptions[variance_amount], focus_exceptions[erp_amount])))
+		formatString: #,0
+		lineageTag: c939149e-a0d8-4082-8156-beeffea95edb
+
 	partition _Measures = m
 		mode: import
 		source =

@@ -1,0 +1,52 @@
+table focus_exceptions
+	lineageTag: dec38ca8-6c48-4e9c-b154-603c23826516
+
+	column transaction_id
+		dataType: string
+		lineageTag: da5c5154-50c1-44b2-9c0a-8105bfba4aa5
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ba0ef51-d9e8-487f-81c6-007b8133f7b3
+		summarizeBy: none
+		sourceColumn: account_id
+
+	column period
+		dataType: string
+		lineageTag: bff48e3b-d870-4ef9-b619-9f1d408ad685
+		summarizeBy: none
+		sourceColumn: period
+
+	column exception_type
+		dataType: string
+		lineageTag: 45e64f85-58b9-46ea-bf20-0b1795aa2a8b
+		summarizeBy: none
+		sourceColumn: exception_type
+
+	column erp_amount
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 7dba5602-f780-4738-91b5-ce2986fee672
+		summarizeBy: sum
+		sourceColumn: erp_amount
+
+	column variance_amount
+		dataType: double
+		formatString: #,0.00
+		lineageTag: d19935f7-4401-450c-bb60-5fd1d672afb5
+		summarizeBy: sum
+		sourceColumn: variance_amount
+
+	partition focus_exceptions = m
+		mode: import
+		source =
+				let
+				    // Cloud exception log from the unmodified engine run on the FOCUS dataset.
+				    Source = Csv.Document(File.Contents(DataPath & "\finops\output\gl_reconciliation_exceptions.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"transaction_id", type text}, {"account_id", Int64.Type}, {"period", type text}, {"exception_type", type text}, {"erp_amount", type number}, {"variance_amount", type number}})
+				in
+				    Typed

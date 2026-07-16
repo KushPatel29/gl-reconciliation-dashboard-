@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "visual066",
+  "position": {
+    "x": 20,
+    "y": 420,
+    "z": 66000,
+    "height": 280,
+    "width": 400,
+    "tabOrder": 66000
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_exceptions"
+                    }
+                  },
+                  "Property": "exception_type"
+                }
+              },
+              "queryRef": "focus_exceptions.exception_type",
+              "nativeQueryRef": "exception_type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Cloud Exceptions"
+                }
+              },
+              "queryRef": "_Measures.Cloud Exceptions",
+              "nativeQueryRef": "Cloud Exceptions"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cloud exception mix (untagged, timing, rate, duplicate)'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,26 @@
 transaction_id,account_id,period,exception_type,erp_amount,variance_amount
-focus-2026-06-untagged-ec2,61,2026-06,Missing in subledger,2340.0,
-focus-2026-05-sp-upfront,66,2026-05,Missing in subledger,18000.0,
-focus-2026-05-sp-upfront,66,2026-05,Timing difference,18000.0,
-focus-2026-06-rds-listprice,63,2026-06,Amount mismatch,4100.0,-615.0
-focus-2026-06-datadog,65,2026-06,Duplicate posting,3700.0,
+focus-2026-01-lambda-security-0,61,2026-01,Missing in subledger,203.55,
+focus-2026-01-rds-security-1,63,2026-01,Missing in subledger,1741.92,
+focus-2026-01-cloudfront-security-0,65,2026-01,Missing in subledger,396.12,
+focus-2026-02-ebs-finance-it-1,62,2026-02,Missing in subledger,627.33,
+focus-2026-04-ec2-engineering-2,61,2026-04,Missing in subledger,2371.51,
+focus-2026-04-eks-engineering-0,61,2026-04,Missing in subledger,978.93,
+focus-2026-04-s3-data-platform-1,62,2026-04,Missing in subledger,1253.1,
+focus-2026-04-ebs-security-0,62,2026-04,Missing in subledger,679.9,
+focus-2026-05-s3-marketing-0,62,2026-05,Missing in subledger,579.87,
+focus-2026-05-ebs-marketing-0,62,2026-05,Missing in subledger,598.57,
+focus-2026-01-sp-upfront,67,2026-01,Missing in subledger,18000.0,
+focus-2026-04-sp-upfront,67,2026-04,Missing in subledger,21000.0,
+focus-2026-02-ebs-finance-it-1,62,2026-02,Timing difference,627.33,
+focus-2026-04-s3-data-platform-1,62,2026-04,Timing difference,1253.1,
+focus-2026-05-ebs-marketing-0,62,2026-05,Timing difference,598.57,
+focus-2026-01-sp-upfront,67,2026-01,Timing difference,18000.0,
+focus-2026-04-sp-upfront,67,2026-04,Timing difference,21000.0,
+focus-2026-02-ebs-finance-it-0,62,2026-02,Amount mismatch,903.54,-135.52999999999997
+focus-2026-05-rds-marketing-1,63,2026-05,Amount mismatch,4317.18,-647.5800000000004
+focus-2026-05-redshift-data-platform-0,64,2026-05,Amount mismatch,2302.88,-345.43000000000006
+focus-2026-06-s3-engineering-0,62,2026-06,Amount mismatch,1254.98,-188.25
+focus-2026-02-pagerduty,66,2026-02,Duplicate posting,3653.64,
+focus-2026-02-snowflake,66,2026-02,Duplicate posting,5180.92,
+focus-2026-04-pagerduty,66,2026-04,Duplicate posting,3881.7,
+focus-2026-05-snowflake,66,2026-05,Duplicate posting,5169.72,

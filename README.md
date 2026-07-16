@@ -71,10 +71,11 @@ flowchart LR
 data_generator/     synthetic ERP + subledger GL generator (Python)
 data/               generated CSVs (dim_account, dim_cost_center, two GL sources)
 sql/                reconciliation_checks.sql — T-SQL reference for SQL Server/Fabric
+finops/             FinOps mode — FOCUS billing generator, mapping, coverage KPI
 engine/             SQLite-backed runner: the same SQL, executable with no DB setup
 powerbi/            DAX measure library, build guide, and the ready-to-open
-                     PBIP project (TMDL model + PBIR report, 3 pages)
-tests/              pytest suite proving each discrepancy class is detected
+                     PBIP project (TMDL model + PBIR report, 5 pages)
+tests/              pytest suite proving each discrepancy class is detected (GL + FinOps)
 output/             engine results — control totals, exception log, summary
 .github/workflows/  CI — regenerates data, runs the engine, runs the tests
 ```
@@ -126,7 +127,25 @@ schemas, plants one of each cloud anomaly, and runs the engine **unmodified**
 
 All four are recovered with zero false positives on the clean charges
 (`python finops/focus_demo.py`; column-by-column mapping guide in
-[`finops/README.md`](finops/README.md)). As a control, the cloud variant is:
+[`finops/README.md`](finops/README.md)).
+
+Beyond the didactic demo, FinOps mode runs at dataset scale:
+[`generate_focus_data.py`](finops/generate_focus_data.py) produces six
+months of billing (~410 charge lines, ~$700K) with anomalies injected at
+realistic rates — every one recorded in an **anomaly manifest**, and the
+test suite asserts the engine recovers *exactly* that set: nothing missed,
+nothing invented. [`run_finops_recon.py`](finops/run_finops_recon.py) adds
+the KPI reconciliation alone can't give you, **allocation coverage** — the
+share of each month's billed spend that reached a cost-center owner (99.0%
+here; untagged resources are exactly the gap). The results land on their
+own dashboard page:
+
+**Cloud Chargeback (FinOps)** — billed spend, allocation coverage, untagged
+dollars, exception mix, and the FINOPS-REC-01 evidence list:
+
+![Cloud Chargeback](powerbi/screenshots/05-cloud-chargeback.png)
+
+As a control, the cloud variant is:
 
 | | |
 |---|---|
@@ -155,8 +174,8 @@ Verify the detection logic:
 
 ```bash
 pip install pytest
-pytest tests/ -v    # 12 tests — every discrepancy class found, every dollar accounted for,
-                    # in both GL and FinOps mode
+pytest tests/ -v    # 22 tests — every discrepancy class found, every dollar accounted for,
+                    # in GL mode and FinOps mode, plus Power BI model/report integrity
 ```
 
 ## Tableau version

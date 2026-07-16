@@ -4,7 +4,8 @@
     "section_close_scorecard",
     "section_variance_account",
     "section_exception_detail",
-    "section_close_insights"
+    "section_close_insights",
+    "section_cloud_chargeback"
   ],
-  "activePageName": "section_exception_detail"
+  "activePageName": "section_close_scorecard"
 }

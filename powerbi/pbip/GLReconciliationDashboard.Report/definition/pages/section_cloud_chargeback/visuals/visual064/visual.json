@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "visual064",
+  "position": {
+    "x": 20,
+    "y": 150,
+    "z": 64000,
+    "height": 250,
+    "width": 610,
+    "tabOrder": 64000
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_coverage"
+                    }
+                  },
+                  "Property": "month"
+                }
+              },
+              "queryRef": "focus_coverage.month",
+              "nativeQueryRef": "month",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Allocation Coverage %"
+                }
+              },
+              "queryRef": "_Measures.Allocation Coverage %",
+              "nativeQueryRef": "Allocation Coverage %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Allocation coverage by month (share of billed spend with an owner)'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

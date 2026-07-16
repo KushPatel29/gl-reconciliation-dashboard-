@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "visual067",
+  "position": {
+    "x": 440,
+    "y": 420,
+    "z": 67000,
+    "height": 280,
+    "width": 820,
+    "tabOrder": 67000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_exceptions"
+                    }
+                  },
+                  "Property": "transaction_id"
+                }
+              },
+              "queryRef": "focus_exceptions.transaction_id",
+              "nativeQueryRef": "transaction_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_exceptions"
+                    }
+                  },
+                  "Property": "period"
+                }
+              },
+              "queryRef": "focus_exceptions.period",
+              "nativeQueryRef": "period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_exceptions"
+                    }
+                  },
+                  "Property": "exception_type"
+                }
+              },
+              "queryRef": "focus_exceptions.exception_type",
+              "nativeQueryRef": "exception_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_exceptions"
+                    }
+                  },
+                  "Property": "erp_amount"
+                }
+              },
+              "queryRef": "focus_exceptions.erp_amount",
+              "nativeQueryRef": "erp_amount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_exceptions"
+                    }
+                  },
+                  "Property": "variance_amount"
+                }
+              },
+              "queryRef": "focus_exceptions.variance_amount",
+              "nativeQueryRef": "variance_amount"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "focus_exceptions"
+                  }
+                },
+                "Property": "erp_amount"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cloud exception detail \u2014 the FINOPS-REC-01 evidence list'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

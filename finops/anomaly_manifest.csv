@@ -1,0 +1,21 @@
+charge_id,anomaly,expected_classification,month,dollars
+focus-2026-01-cloudfront-security-0,untagged_spend,Missing in subledger,2026-01,396.12
+focus-2026-01-lambda-security-0,untagged_spend,Missing in subledger,2026-01,203.55
+focus-2026-01-rds-security-1,untagged_spend,Missing in subledger,2026-01,1741.92
+focus-2026-01-sp-upfront,upfront_commitment_late_accrual,Timing difference,2026-01,18000.0
+focus-2026-02-ebs-finance-it-0,unapplied_edp_rate,Amount mismatch,2026-02,-135.53
+focus-2026-02-ebs-finance-it-1,late_accrual,Timing difference,2026-02,627.33
+focus-2026-02-pagerduty,marketplace_double_billing,Duplicate posting,2026-02,1826.82
+focus-2026-02-snowflake,marketplace_double_billing,Duplicate posting,2026-02,2590.46
+focus-2026-04-ebs-security-0,untagged_spend,Missing in subledger,2026-04,679.9
+focus-2026-04-ec2-engineering-2,untagged_spend,Missing in subledger,2026-04,2371.51
+focus-2026-04-eks-engineering-0,untagged_spend,Missing in subledger,2026-04,978.93
+focus-2026-04-pagerduty,marketplace_double_billing,Duplicate posting,2026-04,1940.85
+focus-2026-04-s3-data-platform-1,late_accrual,Timing difference,2026-04,1253.1
+focus-2026-04-sp-upfront,upfront_commitment_late_accrual,Timing difference,2026-04,21000.0
+focus-2026-05-ebs-marketing-0,late_accrual,Timing difference,2026-05,598.57
+focus-2026-05-rds-marketing-1,unapplied_edp_rate,Amount mismatch,2026-05,-647.58
+focus-2026-05-redshift-data-platform-0,unapplied_edp_rate,Amount mismatch,2026-05,-345.43
+focus-2026-05-s3-marketing-0,untagged_spend,Missing in subledger,2026-05,579.87
+focus-2026-05-snowflake,marketplace_double_billing,Duplicate posting,2026-05,2584.86
+focus-2026-06-s3-engineering-0,unapplied_edp_rate,Amount mismatch,2026-06,-188.25

@@ -29,5 +29,10 @@ jobs:
       - name: FinOps mode — FOCUS billing demo through the unmodified engine
         run: python finops/focus_demo.py
 
+      - name: FinOps mode — scaled FOCUS dataset + allocation coverage
+        run: |
+          python finops/generate_focus_data.py
+          python finops/run_finops_recon.py
+
       - name: Run reconciliation tests
         run: pytest tests/ -v

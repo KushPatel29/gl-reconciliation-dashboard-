@@ -3,5 +3,6 @@ account_id,account_code,account_name,account_type,statement
 62,6110,Cloud - Storage,Expense,P&L
 63,6120,Cloud - Databases,Expense,P&L
 64,6125,Cloud - Analytics,Expense,P&L
-65,6130,Cloud - Marketplace Software,Expense,P&L
-66,6140,Cloud - Commitment Purchases,Expense,P&L
+65,6128,Cloud - Networking,Expense,P&L
+66,6130,Cloud - Marketplace Software,Expense,P&L
+67,6140,Cloud - Commitment Purchases,Expense,P&L

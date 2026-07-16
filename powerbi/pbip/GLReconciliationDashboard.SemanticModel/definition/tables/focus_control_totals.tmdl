@@ -1,0 +1,54 @@
+table focus_control_totals
+	lineageTag: 24d8a3cc-6258-4d36-a80d-44dabd59b230
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 52d32626-944c-4e7b-a20d-85cb2841742c
+		summarizeBy: none
+		sourceColumn: account_id
+
+	column period
+		dataType: string
+		lineageTag: 44a23fa8-4dc3-4189-b193-78d6cf285f3f
+		summarizeBy: none
+		sourceColumn: period
+
+	column erp_total
+		dataType: double
+		formatString: #,0.00
+		lineageTag: e22eef64-7be6-47b0-a54f-a52144af2136
+		summarizeBy: sum
+		sourceColumn: erp_total
+
+	column subledger_total
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 71f370e7-6d51-4281-9595-027cb0b3c149
+		summarizeBy: sum
+		sourceColumn: subledger_total
+
+	column variance_amount
+		dataType: double
+		formatString: #,0.00
+		lineageTag: bf218ee8-43e5-4e62-af01-2f69b2e2b84e
+		summarizeBy: sum
+		sourceColumn: variance_amount
+
+	column variance_pct
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 95cc7136-054f-4d9b-b61c-c9c6d06ab7d0
+		summarizeBy: none
+		sourceColumn: variance_pct
+
+	partition focus_control_totals = m
+		mode: import
+		source =
+				let
+				    // Cloud account x month control totals (billed vs allocated).
+				    Source = Csv.Document(File.Contents(DataPath & "\finops\output\gl_control_totals.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"account_id", Int64.Type}, {"period", type text}, {"erp_total", type number}, {"subledger_total", type number}, {"variance_amount", type number}, {"variance_pct", type number}})
+				in
+				    Typed

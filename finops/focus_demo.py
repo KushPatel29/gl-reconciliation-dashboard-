@@ -38,6 +38,9 @@ from pathlib import Path
 
 import pandas as pd
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from focus_mapping import ACCOUNTS, COST_CENTERS, write_staging  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 STAGING = HERE / "staging"
@@ -57,16 +60,6 @@ SERVICES = [
 MARKETPLACE = [("Datadog Pro", "Datadog"), ("Snowflake Capacity", "Snowflake")]
 DEPARTMENTS = ["engineering", "data-platform", "marketing"]
 
-# ServiceCategory -> cloud GL account (finops/staging/dim_account.csv)
-ACCOUNTS = {
-    "Compute":               (61, "6100", "Cloud - Compute"),
-    "Storage":               (62, "6110", "Cloud - Storage"),
-    "Databases":             (63, "6120", "Cloud - Databases"),
-    "Analytics":             (64, "6125", "Cloud - Analytics"),
-    "Marketplace Software":  (65, "6130", "Cloud - Marketplace Software"),
-    "Commitments":           (66, "6140", "Cloud - Commitment Purchases"),
-}
-COST_CENTERS = {"engineering": 71, "data-platform": 72, "marketing": 73, "(unallocated)": 79}
 
 # ---- the four planted anomalies ------------------------------------------
 UNTAGGED_ID = "focus-2026-06-untagged-ec2"
@@ -196,43 +189,11 @@ def build_chargeback_ledger(bill: pd.DataFrame) -> pd.DataFrame:
 
 
 def map_to_engine_schema(bill: pd.DataFrame, ledger: pd.DataFrame) -> None:
-    """The documented FOCUS -> engine mapping, executed. System A (the
-    authoritative side, engine role 'stg_erp_gl') is the provider invoice;
-    System B ('stg_subledger_gl') is the internal chargeback ledger."""
-    STAGING.mkdir(exist_ok=True)
-
-    def account_id(cat):
-        return ACCOUNTS[cat][0]
-
-    erp = pd.DataFrame({
-        "transaction_id": bill["x_ChargeId"],
-        "period": bill["ChargePeriodStart"].str[:7],
-        "account_id": bill["ServiceCategory"].map(account_id),
-        "cost_center_id": bill["Tags"].map(
-            lambda t: COST_CENTERS.get(json.loads(t).get("department", "(unallocated)"),
-                                       COST_CENTERS["(unallocated)"])),
-        "amount": bill["BilledCost"],
-        "posted_date": bill["ChargePeriodEnd"],
-        "description": bill["ServiceName"] + " — " + bill["ChargeDescription"],
-    })
-    sub = pd.DataFrame({
-        "transaction_id": ledger["charge_id"],
-        "period": ledger["billing_month"],
-        "account_id": ledger["service_category"].map(account_id),
-        "cost_center_id": ledger["department"].map(
-            lambda d: COST_CENTERS.get(d, COST_CENTERS["(unallocated)"])),
-        "amount": ledger["allocated_amount"],
-        "posted_date": ledger["allocation_date"],
-        "description": ledger["memo"],
-    })
-    dim = pd.DataFrame(
-        [{"account_id": aid, "account_code": code, "account_name": name,
-          "account_type": "Expense", "statement": "P&L"}
-         for aid, code, name in ACCOUNTS.values()])
-
-    erp.to_csv(STAGING / "source_erp_gl.csv", index=False)
-    sub.to_csv(STAGING / "source_subledger_gl.csv", index=False)
-    dim.to_csv(STAGING / "dim_account.csv", index=False)
+    """System A (engine role 'stg_erp_gl') is the provider invoice; System B
+    ('stg_subledger_gl') is the chargeback ledger. The actual column mapping
+    lives in focus_mapping.py — one executable mapping, shared with the
+    scaled dataset (run_finops_recon.py)."""
+    write_staging(bill, ledger, STAGING)
 
 
 def run_engine_unmodified() -> dict:

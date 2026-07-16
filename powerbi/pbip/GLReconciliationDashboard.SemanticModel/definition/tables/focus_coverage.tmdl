@@ -1,0 +1,47 @@
+table focus_coverage
+	lineageTag: 0a60b4fb-1881-4fe2-a016-c5f7db2f882e
+
+	column month
+		dataType: string
+		lineageTag: e16f8c0f-6336-49c5-b751-4dc6694b41e2
+		summarizeBy: none
+		sourceColumn: month
+
+	column billed_total
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 95e55030-d60d-44ff-a429-7c377b54ff78
+		summarizeBy: sum
+		sourceColumn: billed_total
+
+	column allocated_total
+		dataType: double
+		formatString: #,0.00
+		lineageTag: fbc9a685-1d96-46b3-a52e-a443190e82c1
+		summarizeBy: sum
+		sourceColumn: allocated_total
+
+	column untagged_total
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 7c98a54d-fce3-43e2-92da-2e990d3c4088
+		summarizeBy: sum
+		sourceColumn: untagged_total
+
+	column coverage_pct
+		dataType: double
+		formatString: 0.0%
+		lineageTag: b6e0a205-f0c3-470b-90c2-43f12a725d18
+		summarizeBy: none
+		sourceColumn: coverage_pct
+
+	partition focus_coverage = m
+		mode: import
+		source =
+				let
+				    // Monthly allocation coverage — the FinOps allocation KPI (run_finops_recon.py).
+				    Source = Csv.Document(File.Contents(DataPath & "\finops\output\allocation_coverage.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"month", type text}, {"billed_total", type number}, {"allocated_total", type number}, {"untagged_total", type number}, {"coverage_pct", type number}})
+				in
+				    Typed

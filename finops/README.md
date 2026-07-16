@@ -50,6 +50,22 @@ cost-center ledger**.
 | **Amount mismatch** | Data-entry / rounding error | **Unapplied negotiated discount** — billed at list price while finance allocates the contracted (EDP) rate |
 | **Duplicate posting** | Keyed twice in the subledger | **Marketplace double-billing** — a SaaS charge arriving both via the cloud marketplace and a direct vendor invoice |
 
+## The scaled dataset and the coverage KPI
+
+`focus_demo.py` teaches the mapping with four hand-planted anomalies;
+`generate_focus_data.py` + `run_finops_recon.py` run FinOps mode at dataset
+scale: six months, ~410 FOCUS lines, ~$700K billed, anomalies injected at
+realistic rates (1.5% untagged, 0.8% unapplied EDP rate, quarterly upfront
+Savings Plans accrued late, a few marketplace double-bills). Every injected
+anomaly is written to `anomaly_manifest.csv`, and the tests assert the
+engine recovers exactly that set — the manifest is what makes a synthetic
+benchmark falsifiable instead of decorative.
+
+The run also computes `allocation_coverage.csv`: per month, how much of the
+billed spend reached a cost-center owner. That's the FinOps allocation KPI
+— reconciliation tells you *what broke*; coverage tells you *how much of
+the bill anyone owns*. Both feed the dashboard's Cloud Chargeback page.
+
 ## Honest scope notes
 
 - The sample is *FOCUS-shaped synthetic data*, not a real CUR/EA export. A

@@ -1,0 +1,44 @@
+table focus_dim_account
+	lineageTag: 91606133-afb9-4f0e-a21d-ee454940071e
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 85205204-074c-4bbf-b5c5-8bf86a0e0680
+		summarizeBy: none
+		sourceColumn: account_id
+
+	column account_code
+		dataType: string
+		lineageTag: af4d0afa-4290-486d-a56f-71c4ccc88404
+		summarizeBy: none
+		sourceColumn: account_code
+
+	column account_name
+		dataType: string
+		lineageTag: f05bd0f5-7edb-462c-94e9-a52e82a37701
+		summarizeBy: none
+		sourceColumn: account_name
+
+	column account_type
+		dataType: string
+		lineageTag: 35f116dd-f251-466a-b28b-aaeb140a99b1
+		summarizeBy: none
+		sourceColumn: account_type
+
+	column statement
+		dataType: string
+		lineageTag: 2a8a84e7-6d1c-476e-a2bb-2bd659b385f5
+		summarizeBy: none
+		sourceColumn: statement
+
+	partition focus_dim_account = m
+		mode: import
+		source =
+				let
+				    // Cloud GL accounts (ServiceCategory mapping) from the FOCUS staging step.
+				    Source = Csv.Document(File.Contents(DataPath & "\finops\staging\dim_account.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"account_id", Int64.Type}, {"account_code", type text}, {"account_name", type text}, {"account_type", type text}, {"statement", type text}})
+				in
+				    Typed
